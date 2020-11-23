@@ -1,8 +1,8 @@
 <img src="<%= Routes.static_path(@conn, "/images/truck.svg") %>" alt=""/>
-<h1>Déménager mon Cozy</h1>
-<p>En déménageant votre Cozy, vous pourrez choisir de transférer toutes vos
+<h1 class="u-title-h1">Déménager mon Cozy</h1>
+<p class="u-text">En déménageant votre Cozy, vous pourrez choisir de transférer toutes vos
    données vers une nouvelle adresse ou un nouvel hébergeur de votre choix.</p>
-<p>Vos ancien et nouveau Cozy seront inaccessibles durant cette phase de
+<p class="u-text">Vos ancien et nouveau Cozy seront inaccessibles durant cette phase de
    déménagement. Cela pourra durer plusieurs heures.</p>
-<p>Une fois le transfert terminé, votre ancien Cozy sera supprimé.</p>
-<a href="/instances">C'est parti</a>
+<p class=u-text>Une fois le transfert terminé, votre ancien Cozy sera supprimé.</p>
+<a href="/instances" class="c-btn">C'est parti</a>

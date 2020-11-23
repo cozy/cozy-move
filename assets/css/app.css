@@ -1,3 +1,15 @@
-h1 {
-  color: blue;
+@import "~cozy-ui/dist/cozy-ui.min.css";
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/Lato-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/Lato-Bold.woff2") format("woff2");
 }
