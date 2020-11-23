@@ -1,0 +1,33 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/move_web/templates/layout/app.html.eex:7
+#: lib/move_web/templates/page/index.html.eex:2
+msgid "Move my Cozy"
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:3
+msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:4
+msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:5
+msgid "Once the transfer is completed, your old Cozy will be deleted."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:6
+msgid "Let's move!"
+msgstr ""

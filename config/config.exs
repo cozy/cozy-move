@@ -15,6 +15,8 @@ config :move, MoveWeb.Endpoint,
   pubsub_server: Move.PubSub,
   live_view: [signing_salt: "/GpNW1z7"]
 
+config :move, MoveWeb.Gettext, default_locale: "en", locales: ~w(en fr)
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

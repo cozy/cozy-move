@@ -1,0 +1,32 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/move_web/templates/layout/app.html.eex:7
+#: lib/move_web/templates/page/index.html.eex:2
+msgid "Move my Cozy"
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:3
+msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:4
+msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:5
+msgid "Once the transfer is completed, your old Cozy will be deleted."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:6
+msgid "Let's move!"
+msgstr ""
