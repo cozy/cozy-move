@@ -8,20 +8,19 @@ defmodule MoveWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  scope "/", MoveWeb do
+    pipe_through :browser
+    get "/", PageController, :index
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", MoveWeb do
-    pipe_through :browser
-
-    get "/", PageController, :index
+  scope "/status", MoveWeb do
+    pipe_through :api
+    get "/", StatusController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", MoveWeb do
-  #   pipe_through :api
-  # end
 
   # Enables LiveDashboard only for development
   #
