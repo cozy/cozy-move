@@ -14,7 +14,6 @@ defmodule MoveWeb.PageController do
   end
 
   def index(conn, %{"locale" => locale}) do
-    Gettext.put_locale(locale)
-    render(conn, "index.html", back: false)
+    render(conn, "index.html", back: false, locale: locale)
   end
 end

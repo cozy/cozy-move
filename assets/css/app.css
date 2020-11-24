@@ -24,6 +24,14 @@
   margin: 0;
 }
 
+/* Utilities */
+.u-bdc-frenchPass {
+  border-color: var(--frenchPass);
+}
+.u-bds-dotted {
+  border-style: dotted;
+}
+
 /* Mobile */
 @media (max-width: 30rem) {
   .no-back-link nav,
@@ -51,6 +59,10 @@
 
 /* Desktop */
 @media (min-width: 30rem) {
+  .nav-back {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .content {
     margin-top: 6rem;
   }

@@ -1,0 +1,20 @@
+<h1 class="u-title-h1 u-mt-1 u-mb-2"><%= gettext "Move my Cozy" %></h1>
+
+<h2 class="u-title-h4 u-w-100 u-mb-1"><%= gettext "Export from" %></h2>
+<div class="u-w-100 u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center">
+  <%= gettext "Select a Cozy" %>
+</div>
+
+<div class="u-w-100 u-mb-1 u-mt-1 u-flex u-flex-row u-flex-justify-between">
+  <h2 class="u-title-h4 u-lh-medium u-mv-0"><%= gettext "To" %></h2>
+  <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
+</div>
+<div class="u-w-100 u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center">
+  <%= gettext "Select a Cozy" %>
+</div>
+
+<p class="u-text u-w-100 u-mb-0 u-mt-1-half"><%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %></p>
+
+<footer class="content-actions">
+  <div class="c-btn" disabled="true"><span><%= gettext "Start the move!" %></span></div>
+</footer>

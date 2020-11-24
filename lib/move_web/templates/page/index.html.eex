@@ -5,5 +5,7 @@
 <p class="u-text u-w-100 u-mb-0"><%= gettext "Once the transfer is completed, your old Cozy will be deleted." %></p>
 
 <footer class="content-actions">
-  <a href="/instances" class="c-btn"><span><%= gettext "Let's move!" %></span></a>
+  <a href="<%= Routes.instance_path(@conn, :index, @locale) %>" class="c-btn">
+    <span><%= gettext "Let's move!" %></span>
+  </a>
 </footer>

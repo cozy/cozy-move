@@ -17,6 +17,7 @@ defmodule MoveWeb.Router do
   scope "/:locale", MoveWeb do
     pipe_through :browser
     get "/", PageController, :index
+    get "/instances", InstanceController, :index
   end
 
   pipeline :api do
