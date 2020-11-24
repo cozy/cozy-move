@@ -10,23 +10,52 @@
 msgid ""
 msgstr ""
 
-#: lib/move_web/templates/layout/app.html.eex:7
-#: lib/move_web/templates/page/index.html.eex:2
+#: lib/move_web/templates/instance/index.html.eex:2
+#: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
 msgid "Move my Cozy"
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:3
+#: lib/move_web/templates/page/index.html.eex:4
 msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:4
+#: lib/move_web/templates/page/index.html.eex:5
 msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:5
+#: lib/move_web/templates/page/index.html.eex:6
 msgid "Once the transfer is completed, your old Cozy will be deleted."
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:6
+#: lib/move_web/templates/page/index.html.eex:11
 msgid "Let's move!"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:6
+msgid "Export from"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:8
+#: lib/move_web/templates/instance/index.html.eex:16
+msgid "Select a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:23
+msgid "Start the move!"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:13
+msgid "Switch"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:12
+msgid "To"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:19
+msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgstr ""
+
+#: lib/move_web/templates/layout/app.html.eex:13
+msgid "back"
 msgstr ""

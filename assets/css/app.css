@@ -98,6 +98,9 @@ main > footer > .c-btn {
   main > header + section {
     grid-area: 3 / 1 / 4 / 3;
   }
+  main > section {
+    grid-area: 3 / 1 / 4 / 3;
+  }
   main > header,
   main > section,
   main > footer {

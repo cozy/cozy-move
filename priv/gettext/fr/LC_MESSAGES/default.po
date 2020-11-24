@@ -11,23 +11,52 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2\n"
 
-#: lib/move_web/templates/layout/app.html.eex:7
-#: lib/move_web/templates/page/index.html.eex:2
+#: lib/move_web/templates/instance/index.html.eex:2
+#: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
 msgid "Move my Cozy"
 msgstr "Déménager mon Cozy"
 
-#: lib/move_web/templates/page/index.html.eex:3
+#: lib/move_web/templates/page/index.html.eex:4
 msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
 msgstr "En déménageant votre Cozy, vous pourrez choisir de transférer toutes vos données vers une nouvelle adresse ou un nouvel hébergeur de votre choix."
 
-#: lib/move_web/templates/page/index.html.eex:4
+#: lib/move_web/templates/page/index.html.eex:5
 msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
 msgstr "Vos ancien et nouveau Cozy seront inaccessibles durant cette phase de déménagement. Cela pourra durer plusieurs heures."
 
-#: lib/move_web/templates/page/index.html.eex:5
+#: lib/move_web/templates/page/index.html.eex:6
 msgid "Once the transfer is completed, your old Cozy will be deleted."
 msgstr "Une fois le transfert terminé, votre ancien Cozy sera supprimé."
 
-#: lib/move_web/templates/page/index.html.eex:6
+#: lib/move_web/templates/page/index.html.eex:11
 msgid "Let's move!"
-msgstr "C'est parti"
+msgstr "C'est parti !"
+
+#: lib/move_web/templates/instance/index.html.eex:6
+msgid "Export from"
+msgstr "Exporter :"
+
+#: lib/move_web/templates/instance/index.html.eex:8
+#: lib/move_web/templates/instance/index.html.eex:16
+msgid "Select a Cozy"
+msgstr "Sélectionner un Cozy"
+
+#: lib/move_web/templates/instance/index.html.eex:23
+msgid "Start the move!"
+msgstr "Lancer le déménagement"
+
+#: lib/move_web/templates/instance/index.html.eex:13
+msgid "Switch"
+msgstr "Inverser"
+
+#: lib/move_web/templates/instance/index.html.eex:12
+msgid "To"
+msgstr "Vers :"
+
+#: lib/move_web/templates/instance/index.html.eex:19
+msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgstr "Les ancien et nouveau Cozy seront inaccessibles durant cette phase d'export. Cela pourra prendre plusieurs heures. Ne vous inquiétez pas : vous serez prévenu une fois l'export terminé."
+
+#: lib/move_web/templates/layout/app.html.eex:13
+msgid "back"
+msgstr ""
