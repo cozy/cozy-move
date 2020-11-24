@@ -13,8 +13,8 @@ defmodule MoveWeb.PageController do
     |> Enum.find(nil, fn l -> Enum.member?(@supported_locales, l) end)
   end
 
-  def index(conn, params) do
-    Gettext.put_locale(params["locale"])
+  def index(conn, %{"locale": locale}) do
+    Gettext.put_locale(locale)
     render(conn, "index.html")
   end
 end
