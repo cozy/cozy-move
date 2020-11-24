@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <main role="main" class="container<%= if !@back do %> no-back-link<% end %> u-flex u-flex-column u-ph-1">
-      <nav role="navigation" class="u-h-3 u-flex u-flex-row u-flex-items-center">
-        <%= if @back do %><a class="nav-back" href="<%= @back %>">
-          <img src="<%= Routes.static_path(@conn, "/images/icon-back.svg") %>" alt="<%= gettext "back" %>" />
-        </a><% end %>
-        <img class="nav-logo u-mv-1 u-mh-half" src="<%= Routes.static_path(@conn, "/images/icon-home.svg") %>" alt="Cozy Cloud" />
-        <h2 class="nav-cozy u-title-h2">Cozy</h2>
+    <main role="main" <%= if !@back do %>class="cover-page"<% end %>>
+      <%= if @back do %><a href="<%= @back %>">
+        <img src="<%= Routes.static_path(@conn, "/images/icon-back.svg") %>" alt="<%= gettext "back" %>" />
+      </a><% end %>
+      <nav role="navigation">
+        <div class="u-w-1px u-h-1-half u-bg-silver u-mr-1"></div>
+        <img class="u-mv-1 u-mh-half" src="<%= Routes.static_path(@conn, "/images/icon-home.svg") %>" alt="Cozy Cloud" />
+        <h2 class="u-title-h2">Cozy</h2>
       </nav>
-      <section class="content u-flex u-flex-column u-flex-items-center u-maw-6 u-mh-auto">
-        <%= @inner_content %>
-      </section>
+      <%= @inner_content %>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
