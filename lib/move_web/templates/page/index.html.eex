@@ -1,6 +1,9 @@
 <img src="<%= Routes.static_path(@conn, "/images/truck.svg") %>" alt=""/>
-<h1 class="u-title-h1"><%= gettext "Move my Cozy" %></h1>
-<p class="u-text"><%= gettext "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice." %></p>
-<p class="u-text"><%= gettext "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours." %></p>
-<p class="u-text"><%= gettext "Once the transfer is completed, your old Cozy will be deleted." %></p>
-<a href="/instances" class="c-btn"><%= gettext "Let's move!" %></a>
+<h1 class="u-title-h1 u-mt-1"><%= gettext "Move my Cozy" %></h1>
+<p class="u-text u-w-100 u-mb-0"><%= gettext "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice." %></p>
+<p class="u-text u-w-100 u-mb-0"><%= gettext "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours." %></p>
+<p class="u-text u-w-100 u-mb-0"><%= gettext "Once the transfer is completed, your old Cozy will be deleted." %></p>
+
+<footer class="content-actions">
+  <a href="/instances" class="c-btn"><span><%= gettext "Let's move!" %></span></a>
+</footer>

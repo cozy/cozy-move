@@ -4,7 +4,7 @@ defmodule MoveWeb.PageController do
 
   def detect_lang(conn, _params) do
     locale = get_locale_from_header(conn) || "en"
-    redirect(conn, to: "/#{locale}")
+    redirect(conn, to: Routes.page_path(conn, :index, locale))
   end
 
   defp get_locale_from_header(conn) do
@@ -13,8 +13,8 @@ defmodule MoveWeb.PageController do
     |> Enum.find(nil, fn l -> Enum.member?(@supported_locales, l) end)
   end
 
-  def index(conn, %{"locale": locale}) do
+  def index(conn, %{"locale" => locale}) do
     Gettext.put_locale(locale)
-    render(conn, "index.html")
+    render(conn, "index.html", back: false)
   end
 end

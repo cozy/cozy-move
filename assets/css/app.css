@@ -1,5 +1,6 @@
 @import "~cozy-ui/dist/cozy-ui.min.css";
 
+/* Fonts */
 @font-face {
   font-family: Lato;
   font-style: normal;
@@ -12,4 +13,48 @@
   font-style: normal;
   font-weight: bold;
   src: url("/fonts/Lato-Bold.woff2") format("woff2");
+}
+
+/* Actions footer */
+.content-actions {
+  width: 100%;
+  margin-top: 2rem;
+}
+.content-actions .c-btn {
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 30rem) {
+  .no-back-link nav,
+  .nav-logo,
+  .nav-cozy {
+    display: none;
+  }
+  .no-back-link .content {
+    margin-top: 4rem;
+  }
+  .container {
+    min-height: 100vh;
+  }
+  .content,
+  .content-actions {
+    flex: 1;
+  }
+  .content-actions .c-btn {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 30rem) {
+  .content {
+    margin-top: 6rem;
+  }
+  .content-actions .c-btn {
+    width: 100%;
+  }
 }
