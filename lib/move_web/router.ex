@@ -18,6 +18,7 @@ defmodule MoveWeb.Router do
     pipe_through :browser
     get "/", PageController, :index
     get "/instances", InstanceController, :index
+    get "/:side/select", InstanceController, :select
   end
 
   pipeline :api do

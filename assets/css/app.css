@@ -22,8 +22,17 @@
 .u-bdc-frenchPass {
   border-color: var(--frenchPass);
 }
+.u-bdc-silver {
+  border-color: var(--silver);
+}
 .u-bds-dotted {
   border-style: dotted;
+}
+.u-bds-solid {
+  border-style: solid;
+}
+.u-bd-bottom {
+  border-bottom: 1px solid var(--silver);
 }
 
 /* Layout */
@@ -80,7 +89,7 @@ main > footer > .c-btn {
   main > header {
     box-shadow: inset 0 -1px 0 0 var(--silver);
   }
-  main > section,
+  main > section:not(.u-m-0-s),
   main > footer {
     width: calc(100vw - 2rem);
     margin: 1rem;
@@ -89,6 +98,12 @@ main > footer > .c-btn {
 
 /* Desktop */
 @media (min-width: 30rem) {
+  .u-bdw-0-m {
+    border-width: 0px;
+  }
+  .u-bdw-half-m {
+    border-width: 1px;
+  }
   main > a + nav {
     grid-area: 1 / 2 / 2 / 3;
   }
@@ -105,6 +120,7 @@ main > footer > .c-btn {
   main > section,
   main > footer {
     max-width: 32rem;
+    width: 100%;
     margin: auto;
   }
   main > footer > .c-btn {

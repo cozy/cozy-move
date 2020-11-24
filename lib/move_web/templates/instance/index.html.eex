@@ -4,17 +4,17 @@
 
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
-  <div class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center">
+  <a href="<%= Routes.instance_path(@conn, :select, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
     <%= gettext "Select a Cozy" %>
-  </div>
+  </a>
 
   <div class="u-mb-1 u-mt-1 u-flex u-flex-row u-flex-justify-between">
     <h2 class="u-title-h4 u-lh-medium u-mv-0"><%= gettext "To" %></h2>
     <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
   </div>
-  <div class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center">
+  <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
     <%= gettext "Select a Cozy" %>
-  </div>
+  </a>
 
   <p class="u-text u-mb-0 u-mt-1-half"><%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %></p>
 </section>

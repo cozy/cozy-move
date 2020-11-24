@@ -36,7 +36,7 @@ msgid "Export from"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:8
-#: lib/move_web/templates/instance/index.html.eex:16
+#: lib/move_web/templates/instance/index.html.eex:16 lib/move_web/templates/instance/select.html.eex:2
 msgid "Select a Cozy"
 msgstr ""
 
@@ -58,4 +58,12 @@ msgstr ""
 
 #: lib/move_web/templates/layout/app.html.eex:13
 msgid "back"
+msgstr ""
+
+#: lib/move_web/templates/instance/select.html.eex:8
+msgid "I have already a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/select.html.eex:12
+msgid "I have not yet a Cozy"
 msgstr ""
