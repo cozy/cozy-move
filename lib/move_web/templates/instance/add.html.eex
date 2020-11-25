@@ -1,0 +1,19 @@
+<header>
+  <h1 class="u-title-h1"><%= gettext "Create a new Cozy" %></h1>
+</header>
+
+<section>
+  <h2 class="u-title-h4 u-mb-1"><%= gettext "Follow the following steps to move to a new Cozy" %></h2>
+  <ol class="u-w-auto u-bg-paleGrey u-bdrs-4 u-stack-m u-pv-1 u-pr-1">
+    <li class="u-text">
+      <a href="https://manager.cozycloud.cc/cozy/create?lang=<%= @locale %>" class="u-link u-charcoalGrey">
+        <%= gettext "Click here to create your new Cozy" %>
+      </a>
+    </li>
+    <li class="u-text">
+      <%= gettext "Once you have created your Cozy, go back to the previous screen and click on \""
+      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have my new Cozy"
+      %></strong><%= gettext "\"" %>
+    </li>
+  </ol>
+</section>

@@ -68,3 +68,27 @@ msgstr ""
 #: lib/move_web/templates/instance/select.html.eex:12
 msgid "I have not yet a Cozy"
 msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:16
+msgid "\""
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:10
+msgid "Click here to create your new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:2
+msgid "Create a new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:6
+msgid "Follow the following steps to move to a new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:15
+msgid "I already have my new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:14
+msgid "Once you have created your Cozy, go back to the previous screen and click on \""
+msgstr ""
