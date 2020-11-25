@@ -1,0 +1,20 @@
+<header>
+  <h1 class="u-title-h1"><%= gettext "Enter your Cozy address" %></h1>
+</header>
+
+<section>
+  <h2 class="u-title-h4 u-mb-1">
+    <%= if @side == "source" do %>
+      <%= gettext "Fill in the address of the Cozy from which you wish to export your data" %>
+    <% else %>
+      <%= gettext "Fill in the address of the Cozy to which you wish to export your data" %>
+    <% end %>
+  </h2>
+  <form>
+    <label>
+      <%= gettext "Address of my Cozy" %>
+      <input type="text" name="url" />
+    </label>
+    <input type="submit" class="c-btn" />
+  </form>
+</section>

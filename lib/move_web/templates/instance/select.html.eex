@@ -4,7 +4,7 @@
 
 <section class="u-m-0-s">
   <div class="u-bxz u-bdw-0 u-bdw-half-m u-bdrs-4 u-bds-solid u-bdc-silver">
-    <a href="#" class="u-db u-h-3 u-flex u-flex-row u-flex-items-center u-link u-bd-bottom">
+    <a href="<%= Routes.instance_path(@conn, :edit, @locale, @side) %>" class="u-db u-h-3 u-flex u-flex-row u-flex-items-center u-link u-bd-bottom">
       <span class="u-flex-auto u-m-1 u-text"><%= gettext "I have already a Cozy" %></span>
       <img src="<%= Routes.static_path(@conn, "/images/icon-arrow-right.svg") %>" alt="" class="u-p-1" >
     </a>

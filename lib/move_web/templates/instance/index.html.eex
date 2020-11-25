@@ -4,7 +4,7 @@
 
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
-  <a href="<%= Routes.instance_path(@conn, :select, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
+  <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
     <%= gettext "Select a Cozy" %>
   </a>
 

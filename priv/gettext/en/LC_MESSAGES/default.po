@@ -92,3 +92,19 @@ msgstr ""
 #: lib/move_web/templates/instance/add.html.eex:14
 msgid "Once you have created your Cozy, go back to the previous screen and click on \""
 msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:15
+msgid "Address of my Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:2
+msgid "Enter your Cozy address"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:8
+msgid "Fill in the address of the Cozy from which you wish to export your data"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:10
+msgid "Fill in the address of the Cozy to which you wish to export your data"
+msgstr ""
