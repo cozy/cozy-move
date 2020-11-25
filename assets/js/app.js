@@ -3,7 +3,14 @@
 // its own CSS file.
 import "../css/app.css"
 
-// webpack automatically bundles all modules in your
-// entry points. Those entry points can be configured
-// in "webpack.config.js".
-import "phoenix_html"
+import React from 'react'
+import { render } from 'react-dom'
+import Warning from './Warning.jsx'
+
+(function(w, d) {
+  const warning = d.getElementById("react-warning")
+  if (warning) {
+    const app = <Warning button={warning.innerText} />
+    render(app, warning.parentElement)
+  }
+})(window, document)

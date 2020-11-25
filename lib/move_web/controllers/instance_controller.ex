@@ -3,8 +3,13 @@ defmodule MoveWeb.InstanceController do
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
-    back = Routes.page_path(conn, :index, locale)
-    render(conn, "index.html", back: back, locale: locale)
+    assigns = %{
+      locale: locale,
+      back: Routes.page_path(conn, :index, locale),
+      source: "bruno.cozy.works",
+      target: "bruno.mycozy.cloud",
+    }
+    render(conn, "index.html", assigns)
   end
 
   def select(conn, %{"locale" => locale, "side" => side}) when side in @sides do

@@ -4,21 +4,36 @@
 
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
-  <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
-    <%= gettext "Select a Cozy" %>
-  </a>
+  <%= if @source do %>
+    <div class="u-elevation-1 u-bdrs-4 u-bdz u-p-1 u-text u-fz-medium"><%= @source %></div>
+  <% else %>
+    <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
+      <%= gettext "Select a Cozy" %>
+    </a>
+  <% end %>
 
   <div class="u-mb-1 u-mt-1 u-flex u-flex-row u-flex-justify-between">
     <h2 class="u-title-h4 u-lh-medium u-mv-0"><%= gettext "To" %></h2>
     <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
   </div>
-  <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
-    <%= gettext "Select a Cozy" %>
-  </a>
+  <%= if @target do %>
+    <div class="u-elevation-1 u-bdrs-4 u-bdz u-p-1 u-text u-fz-medium"><%= @target %></div>
+  <% else %>
+    <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
+      <%= gettext "Select a Cozy" %>
+    </a>
+  <% end %>
 
   <p class="u-text u-mb-0 u-mt-1-half"><%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %></p>
 </section>
 
 <footer>
-  <div class="c-btn" disabled="true"><span><%= gettext "Start the move!" %></span></div>
+  <button class="c-btn"
+    <%= if @source && @target do %>
+      id="react-warning"
+    <% else %>
+      disabled="true"
+    <% end %>>
+    <span><%= gettext "Start the move!" %></span>
+  </button>
 </footer>
