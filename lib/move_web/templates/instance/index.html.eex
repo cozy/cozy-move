@@ -24,13 +24,19 @@
     </a>
   <% end %>
 
-  <p class="u-text u-mb-0 u-mt-1-half"><%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %></p>
+  <p class="u-text u-mb-0 u-mt-1-half">
+    <%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
+  </p>
 </section>
 
 <footer>
   <button class="c-btn"
     <%= if @source && @target do %>
       id="react-warning"
+      data-title="<%= gettext "Warning" %>"
+      data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source %> "
+      data-confirm="<%= gettext "Erase the data" %>"
+      data-cancel="<%= gettext "Cancel" %>"
     <% else %>
       disabled="true"
     <% end %>>

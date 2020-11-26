@@ -35,24 +35,24 @@ msgstr ""
 msgid "Export from"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:8
-#: lib/move_web/templates/instance/index.html.eex:16 lib/move_web/templates/instance/select.html.eex:2
+#: lib/move_web/templates/instance/index.html.eex:11
+#: lib/move_web/templates/instance/index.html.eex:23 lib/move_web/templates/instance/select.html.eex:2
 msgid "Select a Cozy"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:23
+#: lib/move_web/templates/instance/index.html.eex:43
 msgid "Start the move!"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:13
+#: lib/move_web/templates/instance/index.html.eex:17
 msgid "Switch"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:12
+#: lib/move_web/templates/instance/index.html.eex:16
 msgid "To"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:19
+#: lib/move_web/templates/instance/index.html.eex:28
 msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
 msgstr ""
 
@@ -106,4 +106,20 @@ msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:10
 msgid "Fill in the address of the Cozy to which you wish to export your data"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:39
+msgid "Cancel"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:38
+msgid "Erase the data"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:37
+msgid "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:36
+msgid "Warning"
 msgstr ""
