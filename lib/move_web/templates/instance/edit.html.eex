@@ -1,25 +1,28 @@
-<header>
-  <h1 class="u-title-h1"><%= gettext "Enter your Cozy address" %></h1>
-</header>
+<form>
+  <header>
+    <h1 class="u-title-h1"><%= gettext "Enter your Cozy address" %></h1>
+  </header>
 
-<section>
-  <h2 class="u-title-h4 u-mb-1">
-    <%= if @side == "source" do %>
-      <%= gettext "Fill in the address of the Cozy from which you wish to export your data" %>
-    <% else %>
-      <%= gettext "Fill in the address of the Cozy to which you wish to export your data" %>
-    <% end %>
-  </h2>
-  <form>
-    <label>
-      <%= gettext "Address of my Cozy" %>
-      <input type="text" name="url" />
-    </label>
+  <section>
+    <h2 class="u-title-h4 u-mb-1">
+      <%= if @side == "source" do %>
+        <%= gettext "Fill in the address of the Cozy from which you wish to export your data" %>
+      <% else %>
+        <%= gettext "Fill in the address of the Cozy to which you wish to export your data" %>
+      <% end %>
+    </h2>
+    <div id="react-address">
+      <label for="cozy-url"><%= gettext "Address of my Cozy" %></label>
+      <input type="text" name="url" id="cozy-url" />
+    </div>
     <p>
       <a href="https://manager.cozycloud.cc/cozy/reminder?lang=<%= @locale %>" class="u-link">
         <%= gettext "I have forgotten the address of my Cozy" %>
       </a>
     </p>
-    <input type="submit" class="c-btn" />
-  </form>
-</section>
+  </section>
+
+  <footer>
+    <input type="submit" class="c-btn u-m-0" name="Continuer" />
+  </footer>
+</form>

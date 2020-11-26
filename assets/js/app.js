@@ -7,8 +7,9 @@ import React from "react"
 import { render } from "react-dom"
 import { BreakpointsProvider } from "cozy-ui/transpiled/react/hooks/useBreakpoints"
 import MuiCozyTheme from "cozy-ui/transpiled/react/MuiCozyTheme"
+import Address from "./Address.jsx"
 import Warning from "./Warning.jsx"
-;(function (w, d) {
+;(function (d) {
   const wrapReact = (element, app) => {
     render(
       <BreakpointsProvider>
@@ -20,15 +21,15 @@ import Warning from "./Warning.jsx"
 
   const warning = d.getElementById("react-warning")
   if (warning) {
-    const app = (
-      <Warning
-        button={warning.innerText}
-        title={warning.dataset.title}
-        content={warning.dataset.content}
-        confirm={warning.dataset.confirm}
-        cancel={warning.dataset.cancel}
-      />
-    )
+    const props = { ...warning.dataset, button: warning.innerText }
+    const app = <Warning {...props} />
     wrapReact(warning.parentElement, app)
   }
-})(window, document)
+
+  const address = d.getElementById("react-address")
+  if (address) {
+    const label = address.querySelector("label").innerText
+    const app = <Address label={label} />
+    wrapReact(address, app)
+  }
+})(document)

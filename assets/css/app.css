@@ -49,9 +49,10 @@ main {
   --navUnit: 4rem;
   display: grid;
   grid-template-columns: var(--navUnit) 1fr;
-  grid-template-rows: var(--navUnit) calc(2 * var(--navUnit)) 1fr 5.5rem;
+  grid-template-rows: var(--navUnit) calc(2 * var(--navUnit)) 1fr 5rem;
 }
-main > * {
+main > *,
+main form > * {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,27 +60,30 @@ main > * {
 main > a {
   grid-area: 1 / 1 / 2 / 2;
 }
-main > header {
+main header {
   grid-area: 1 / 2 / 2 / 3;
 }
 main > nav {
   grid-area: 1 / 1 / 2 / 3;
   justify-content: flex-start;
 }
-main > section {
+main section {
   grid-area: 2 / 1 / 4 / 3;
   flex-direction: column;
   justify-content: flex-start;
 }
-main > section > * {
+main section > * {
   width: 100%;
 }
-main > footer {
+main footer {
   grid-area: 4 / 1 / 5 / 3;
   width: 100%;
 }
-main > footer > .c-btn {
+main footer > .c-btn {
   width: 100%;
+}
+main form {
+  display: contents;
 }
 
 /* Mobile */
@@ -91,15 +95,15 @@ main > footer > .c-btn {
   main > nav {
     display: none;
   }
-  main > header {
+  main header {
     justify-content: flex-start;
   }
   main > a,
-  main > header {
+  main header {
     box-shadow: inset 0 -1px 0 0 var(--silver);
   }
-  main > section:not(.u-m-0-s),
-  main > footer {
+  main section:not(.u-m-0-s),
+  main footer {
     width: calc(100vw - 2rem);
     margin: 1rem;
   }
@@ -116,23 +120,23 @@ main > footer > .c-btn {
   main > a + nav {
     grid-area: 1 / 2 / 2 / 3;
   }
-  main > header {
+  main header {
     grid-area: 2 / 1 / 3 / 3;
   }
-  main > header + section {
+  main header + section {
     grid-area: 3 / 1 / 4 / 3;
   }
-  main > section {
+  main section {
     grid-area: 3 / 1 / 4 / 3;
   }
-  main > header,
-  main > section,
-  main > footer {
+  main header,
+  main section,
+  main footer {
     max-width: 32rem;
     width: 100%;
     margin: auto;
   }
-  main > footer > .c-btn {
+  main footer > .c-btn {
     margin-top: 2.5rem;
   }
 }

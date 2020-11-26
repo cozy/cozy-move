@@ -54,7 +54,7 @@ defmodule Move.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "cmd npm install --prefix assets"],
-      pretty: ["cmd cd assets && prettier --write --no-semi js/*.js css/*.css"]
+      pretty: ["cmd cd assets && prettier --write --no-semi js/*.js js/*.jsx css/*.css"]
     ]
   end
 end
