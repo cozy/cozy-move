@@ -43,7 +43,6 @@ const Address = ({ label, other }) => {
           name="domain"
           narrow={state.isCustomDomain}
           medium={isTiny}
-          value={state.domain}
           onChange={({ target }) => {
             setState({ isCustomDomain: target.value === customDomain })
           }}

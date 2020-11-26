@@ -24,6 +24,7 @@ const Warning = ({ button, title, content, cancel, confirm }) => {
       </button>
       <ConfirmDialog
         open={state.opened}
+        opened={state.opened} // XXX required to a fix a React warning
         onClose={toggle}
         title={title}
         content=<ReactMarkdown source={content} />

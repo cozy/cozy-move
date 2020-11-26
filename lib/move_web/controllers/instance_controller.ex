@@ -3,11 +3,15 @@ defmodule MoveWeb.InstanceController do
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
+    source = %Instance{url: "bruno.cozy.works", disk: 1_234_456, quota: 5_000_000}
+    target = nil
+
     assigns = %{
       locale: locale,
       back: Routes.page_path(conn, :index, locale),
-      source: "bruno.cozy.works",
-      target: nil
+      source: source,
+      target: target,
+      error: source && target && source.disk > target.quota
     }
 
     render(conn, "index.html", assigns)
@@ -34,7 +38,7 @@ defmodule MoveWeb.InstanceController do
     render(conn, "edit.html", back: back, locale: locale, side: side)
   end
 
-  def update(conn, %{"locale" => locale, "side" => side, "url" => url, "domain" => domain})
+  def update(conn, %{"locale" => _locale, "side" => side, "url" => url, "domain" => domain})
       when side in @sides do
         cozy = if String.starts_with? url, "http" do
           "#{url}#{domain}"

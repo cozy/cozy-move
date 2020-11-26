@@ -5,7 +5,13 @@
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
   <%= if @source do %>
-    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-text u-fz-medium"><%= @source %></div>
+    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1">
+      <p class="u-m-0 u-text u-fz-medium"><%= @source.url %></p>
+      <p class="u-m-0 u-caption">
+        <span<%= if @error do %> class="u-error"<% end %>><%= size @source.disk, @locale %></span>
+        / <%= size @source.quota, @locale %> <%= gettext "Go" %>
+      </p>
+    </div>
   <% else %>
     <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
       <%= gettext "Select a Cozy" %>
@@ -17,14 +23,29 @@
     <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
   </div>
   <%= if @target do %>
-    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-text u-fz-medium"><%= @target %></div>
+    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1">
+      <p class="u-m-0 u-text u-fz-medium"><%= @target.url %></p>
+      <p class="u-m-0 u-caption">
+        <%= size @target.disk, @locale %>
+        <span<%= if @error do %> class="u-error"<% end %>>/ <%= size @target.quota, @locale %> <%= gettext "Go" %></span>
+      </p>
+    </div>
   <% else %>
     <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
       <%= gettext "Select a Cozy" %>
     </a>
   <% end %>
 
-  <p class="u-text u-mb-0 u-mt-1-half">
+  <%= if @error do %>
+    <p class="u-error u-fs-italic u-fz-small u-mb-0">
+      <%= gettext "Votre nouveau Cozy %{target} est limité à %{quota} Go de stockage.", target: @target.url, quota: size(@target.quota, @locale) %>
+    </p>
+    <p class="u-error u-fs-italic u-fz-small u-mb-0">
+      <%= gettext "Augmentez l'espace de stockage de votre Cozy ou supprimez des données de votre ancien Cozy et videz la corbeille." %>
+    </p>
+  <% end %>
+
+  <p class="u-text u-fz-small u-mb-0 u-mt-1-half">
     <%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
   </p>
 </section>
@@ -34,7 +55,7 @@
     <%= if @source && @target do %>
       id="react-warning"
       data-title="<%= gettext "Warning" %>"
-      data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source %> "
+      data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source.url %> "
       data-confirm="<%= gettext "Erase the data" %>"
       data-cancel="<%= gettext "Cancel" %>"
     <% else %>
