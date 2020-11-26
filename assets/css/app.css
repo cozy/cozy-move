@@ -1,3 +1,12 @@
+/* Import cozy-ui. Both imports are needed:
+ * - the first for React components
+ * - the second for u-elevation-1 and c-btn.
+ *
+ * But most of the utilities are imported twice, and we have a lot of
+ * declarations not needed. Webpack complains that our built CSS exceeds
+ * the recommended size limit.
+ */
+@import "~cozy-ui/transpiled/react/stylesheet.css";
 @import "~cozy-ui/dist/cozy-ui.min.css";
 
 /* Fonts */

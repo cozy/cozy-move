@@ -7,7 +7,7 @@ defmodule MoveWeb.InstanceController do
       locale: locale,
       back: Routes.page_path(conn, :index, locale),
       source: "bruno.cozy.works",
-      target: "bruno.mycozy.cloud"
+      target: nil
     }
 
     render(conn, "index.html", assigns)

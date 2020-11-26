@@ -2,7 +2,6 @@
 // The MiniCssExtractPlugin is used to separate it out into
 // its own CSS file.
 import "../css/app.css"
-import "cozy-ui/transpiled/react/stylesheet.css"
 
 import React from "react"
 import { render } from "react-dom"
