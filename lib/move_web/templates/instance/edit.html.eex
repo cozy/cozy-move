@@ -1,4 +1,4 @@
-<form>
+<%= form_tag(Routes.instance_path(@conn, :update, @locale, @side), method: "POST") do %>
   <header>
     <h1 class="u-title-h1"><%= gettext "Enter your Cozy address" %></h1>
   </header>
@@ -11,7 +11,7 @@
         <%= gettext "Fill in the address of the Cozy to which you wish to export your data" %>
       <% end %>
     </h2>
-    <div id="react-address">
+    <div id="react-address" data-other="<%= gettext "other" %>">
       <label for="cozy-url"><%= gettext "Address of my Cozy" %></label>
       <input type="text" name="url" id="cozy-url" />
     </div>
@@ -25,4 +25,4 @@
   <footer>
     <input type="submit" class="c-btn u-m-0" name="Continuer" />
   </footer>
-</form>
+<% end %>

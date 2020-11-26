@@ -29,7 +29,8 @@ import Warning from "./Warning.jsx"
   const address = d.getElementById("react-address")
   if (address) {
     const label = address.querySelector("label").innerText
-    const app = <Address label={label} />
+    const other = address.dataset.other
+    const app = <Address label={label} other={other} />
     wrapReact(address, app)
   }
 })(document)

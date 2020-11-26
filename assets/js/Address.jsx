@@ -13,14 +13,12 @@ const customDomain = "custom"
 const cozyDomain = ".mycozy.cloud"
 const inputID = "cozy-url"
 
-const Address = ({ label }) => {
+const Address = ({ label, other }) => {
   const { isTiny } = useBreakpoints()
   const [state, setState] = useState({
-    value: "",
-    domain: cozyDomain,
+    isCustomDomain: false,
     hasFocus: true,
   })
-  const isCustomDomain = state.domain === customDomain
 
   return (
     <>
@@ -30,30 +28,28 @@ const Address = ({ label }) => {
           <WizardDualFieldInput
             type="text"
             id={inputID}
+            name="url"
             autoCapitalize="none"
             autoCorrect="off"
             autoComplete="off"
             autoFocus
             placeholder={"claude"}
             size={isTiny ? "medium" : undefined}
-            onChange={({ target }) => {
-              setState({ value: target.value })
-            }}
             onFocus={() => setState({ hasFocus: true })}
             onBlur={() => setState({ hasFocus: false })}
-            value={state.value}
           />
         </WizardDualFieldWrapper>
         <WizardSelect
-          narrow={isCustomDomain}
+          name="domain"
+          narrow={state.isCustomDomain}
           medium={isTiny}
           value={state.domain}
           onChange={({ target }) => {
-            setState({ domain: target.value })
+            setState({ isCustomDomain: target.value === customDomain })
           }}
         >
           <option value={cozyDomain}>{cozyDomain}</option>
-          <option value={customDomain}>other TODO i18n</option>
+          <option value="">{other}</option>
         </WizardSelect>
       </WizardDualField>
     </>

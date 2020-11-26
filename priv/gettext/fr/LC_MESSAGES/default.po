@@ -97,15 +97,15 @@ msgstr "Une fois votre Cozy créé, revenez à l'écran précédent et cliquez s
 msgid "Address of my Cozy"
 msgstr "Adresse de mon Cozy"
 
-#: lib/move_web/templates/instance/edit.html.eex:2
+#: lib/move_web/templates/instance/edit.html.eex:3
 msgid "Enter your Cozy address"
 msgstr "Entrer l'adresse de votre Cozy"
 
-#: lib/move_web/templates/instance/edit.html.eex:8
+#: lib/move_web/templates/instance/edit.html.eex:9
 msgid "Fill in the address of the Cozy from which you wish to export your data"
 msgstr "Renseignez l'adresse du Cozy depuis lequel vous souhaitez exporter vos données"
 
-#: lib/move_web/templates/instance/edit.html.eex:10
+#: lib/move_web/templates/instance/edit.html.eex:11
 msgid "Fill in the address of the Cozy to which you wish to export your data"
 msgstr "Renseignez l'adresse du Cozy vers lequel vous souhaitez exporter vos données"
 
@@ -125,6 +125,11 @@ msgstr "Les données déjà présentes sur **_%{source}_** seront écrasées lor
 msgid "Warning"
 msgstr "Attention"
 
-#: lib/move_web/templates/instance/edit.html.eex:19
+#: lib/move_web/templates/instance/edit.html.eex:20
 msgid "I have forgotten the address of my Cozy"
 msgstr "J'ai oublié l'adresse de mon Cozy"
+
+#, elixir-format
+#: lib/move_web/templates/instance/edit.html.eex:14
+msgid "other"
+msgstr "autre"

@@ -33,4 +33,14 @@ defmodule MoveWeb.InstanceController do
 
     render(conn, "edit.html", back: back, locale: locale, side: side)
   end
+
+  def update(conn, %{"locale" => locale, "side" => side, "url" => url, "domain" => domain})
+      when side in @sides do
+        cozy = if String.starts_with? url, "http" do
+          "#{url}#{domain}"
+        else
+          "https://#{url}#{domain}"
+        end
+        redirect conn, external: cozy
+  end
 end

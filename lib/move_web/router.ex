@@ -21,6 +21,7 @@ defmodule MoveWeb.Router do
     get "/:side/select", InstanceController, :select
     get "/:side/add", InstanceController, :add
     get "/:side/edit", InstanceController, :edit
+    post "/:side", InstanceController, :update
   end
 
   pipeline :api do
