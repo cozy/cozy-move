@@ -1,5 +1,4 @@
 defmodule MoveWeb.Plugs.SetLocale do
-  import Plug.Conn
   @supported_locales Gettext.known_locales(MoveWeb.Gettext)
 
   def init(_options), do: nil
