@@ -15,6 +15,11 @@
       <%= gettext "Address of my Cozy" %>
       <input type="text" name="url" />
     </label>
+    <p>
+      <a href="https://manager.cozycloud.cc/cozy/reminder?lang=<%= @locale %>" class="u-link">
+        <%= gettext "I have forgotten the address of my Cozy" %>
+      </a>
+    </p>
     <input type="submit" class="c-btn" />
   </form>
 </section>

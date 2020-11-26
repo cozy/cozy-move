@@ -124,3 +124,7 @@ msgstr ""
 #: lib/move_web/templates/instance/index.html.eex:36
 msgid "Warning"
 msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:19
+msgid "I have forgotten the address of my Cozy"
+msgstr ""
