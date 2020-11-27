@@ -1,5 +1,6 @@
 defmodule MoveWeb.InstanceController do
   use MoveWeb, :controller
+  alias MoveWeb.Models.Instance, as: Instance
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
@@ -11,7 +12,7 @@ defmodule MoveWeb.InstanceController do
       back: Routes.page_path(conn, :index, locale),
       source: source,
       target: target,
-      error: source && target && source.disk > target.quota
+      error: Instance.quota_error(source, target)
     }
 
     render(conn, "index.html", assigns)
@@ -40,11 +41,13 @@ defmodule MoveWeb.InstanceController do
 
   def update(conn, %{"locale" => _locale, "side" => side, "url" => url, "domain" => domain})
       when side in @sides do
-        cozy = if String.starts_with? url, "http" do
-          "#{url}#{domain}"
-        else
-          "https://#{url}#{domain}"
-        end
-        redirect conn, external: cozy
+    cozy =
+      if String.starts_with?(url, "http") do
+        "#{url}#{domain}"
+      else
+        "https://#{url}#{domain}"
+      end
+
+    redirect(conn, external: cozy)
   end
 end
