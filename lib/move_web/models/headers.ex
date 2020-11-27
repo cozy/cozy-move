@@ -1,6 +1,19 @@
 # I can't make set_locale works for me, but I've taken a valuable part:
 # https://github.com/smeevil/set_locale/blob/master/lib/headers.ex
 defmodule MoveWeb.Models.Headers do
+  @supported_locales Gettext.known_locales(MoveWeb.Gettext)
+  @default_locale "en"
+
+  def get_locale(conn) do
+    get_locale_from_header(conn) || @default_locale
+  end
+
+  defp get_locale_from_header(conn) do
+    conn
+    |> extract_accept_language()
+    |> Enum.find(nil, fn l -> Enum.member?(@supported_locales, l) end)
+  end
+
   def extract_accept_language(conn) do
     case Plug.Conn.get_req_header(conn, "accept-language") do
       [value | _] ->
