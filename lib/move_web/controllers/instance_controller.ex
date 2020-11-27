@@ -12,10 +12,22 @@ defmodule MoveWeb.InstanceController do
       back: Routes.page_path(conn, :index, locale),
       source: source,
       target: target,
-      error: Instance.quota_error(source, target)
+      error: Instance.quota_error(source, target),
+      can_swap: Instance.can_swap(source, target)
     }
 
     render(conn, "index.html", assigns)
+  end
+
+  def swap(conn, %{"locale" => locale}) do
+    source = get_session(conn, :source)
+    target = get_session(conn, :target)
+
+    conn
+    |> put_session("source", target)
+    |> put_session("target", source)
+    |> configure_session(renew: true)
+    |> redirect(to: Routes.instance_path(conn, :index, locale))
   end
 
   def select(conn, %{"locale" => locale, "side" => side}) when side in @sides do
@@ -58,7 +70,7 @@ defmodule MoveWeb.InstanceController do
     end
   end
 
-  def create(conn, %{"url" => url}) do
+  def create(conn, %{"side" => side, "url" => url}) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
     instance = %Instance{url: url, disk: 1_234_456, quota: 5_000_000}
 

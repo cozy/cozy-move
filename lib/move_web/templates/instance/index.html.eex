@@ -23,7 +23,11 @@
 
   <div class="u-mb-1 u-mt-1 u-flex u-flex-row u-flex-justify-between">
     <h2 class="u-title-h4 u-lh-medium u-mv-0"><%= gettext "To" %></h2>
-    <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
+    <%= if @can_swap do %>
+      <%= form_tag(Routes.instance_path(@conn, :swap, @locale), method: "POST") do %>
+        <input type="submit" value="<%= gettext "Switch" %>" class="c-btn c-btn--text u-p-0 u-miw-auto u-mih-auto" />
+      <% end %>
+    <% end %>
   </div>
   <%= if @target do %>
     <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-pos-relative">
