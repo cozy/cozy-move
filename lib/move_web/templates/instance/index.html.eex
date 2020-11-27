@@ -5,7 +5,10 @@
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
   <%= if @source do %>
-    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1">
+    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-pos-relative">
+      <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-pos-absolute u-top-m u-right-m">
+        <img src="<%= Routes.static_path(@conn, "/images/icon-pen.svg") %>" alt="<%= gettext "edit" %>" />
+      </a>
       <p class="u-m-0 u-text u-fz-medium"><%= @source.url %></p>
       <p class="u-m-0 u-caption">
         <span<%= if @error do %> class="u-error"<% end %>><%= size @source.disk, @locale %></span>
@@ -23,7 +26,10 @@
     <p class="u-uppercase u-lh-medium u-mv-0 u-dodgerBlue"><%= gettext "Switch" %></p>
   </div>
   <%= if @target do %>
-    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1">
+    <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-pos-relative">
+      <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-pos-absolute u-top-m u-right-m">
+        <img src="<%= Routes.static_path(@conn, "/images/icon-pen.svg") %>" alt="<%= gettext "edit" %>" />
+      </a>
       <p class="u-m-0 u-text u-fz-medium"><%= @target.url %></p>
       <p class="u-m-0 u-caption">
         <%= size @target.disk, @locale %>
