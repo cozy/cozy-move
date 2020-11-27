@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+TARGET_ARCH ?= linux-amd64
+
+%:
+	dh $@ --parallel --with=systemd
+
+override_dh_auto_build:
+	MIX_ENV="prod" mix local.hex --force
+	MIX_ENV="prod" mix setup
+	MIX_ENV="prod" mix compile
+	MIX_ENV="prod" mix compile_assets
+	MIX_ENV="prod" mix release --overwrite cozy_move
+
+override_dh_install:
+	dh_install
+	mv debian/cozy-move/etc/cozy-move/env.template debian/cozy-move/etc/cozy-move/env

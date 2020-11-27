@@ -1,0 +1,17 @@
+/var/log/cozy-move/cozy-move.log
+{
+	rotate 60
+	daily
+	missingok
+	notifempty
+	compress
+	delaycompress
+	dateext
+	dateyesterday
+	dateformat .%Y%m%d
+	create 0640 root adm
+	sharedscripts
+	postrotate
+		invoke-rc.d rsyslog rotate >/dev/null 2>&1 || true
+	endscript
+}

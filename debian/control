@@ -1,0 +1,22 @@
+Source: cozy-move
+Section: admin
+Priority: optional
+Maintainer: Cozycloud <contact@cozycloud.cc>
+Uploaders: Cozycloud <contact@cozycloud.cc>
+Homepage: https://cozy.io
+Standards-Version: 3.9.4
+Vcs-Git: https://github.com/cozy/cozy-move.git
+Build-Depends: debhelper (>= 9), dh-systemd,
+               esl-erlang (>= 1:23.1), elixir (>= 1.11),
+               nodejs (>= 14)
+
+Package: cozy-move
+Architecture: amd64
+Depends: adduser, ${misc:Depends} ${shlibs:Depends}
+Description: Cozy: Simple, Versatile, Yours
+ Cozy Move is a wizard that helps cozy users to move their Cozy from
+ one place/hoster to another.
+ Cozy is a platform that brings all your web services in the same private space.
+ With it, your web apps and your devices can share data easily, providing you
+ with a new experience. You can install Cozy on your own hardware where
+ no one profiles you.

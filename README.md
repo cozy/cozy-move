@@ -29,13 +29,26 @@ to another.
 
 To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
+  * Install dependencies with `mix setup`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+## Building release
+
+To build a release including Erlang Real-Time Sytem ready to be deployed on a
+production server:
+
+  * Compile application with `ENV=prod mix compile`
+  * Compile assets and generate digests with `ENV=prod mix compile_assets`
+  * Create release with `ENV=prod mix release cozy_move`
+
+Your release will live in `_build/prod/rel/cozy_move/`.
+Deploy that directory to your production server and run it with
+`bin/cozy_move start`. You can also build a debian package by typing
+`debuild -us -uc -i -I.git -b`
 
 ## Learn more
 
