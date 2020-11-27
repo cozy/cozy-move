@@ -43,7 +43,7 @@ const Address = ({ label, other }) => {
           narrow={state.isCustomDomain}
           medium={isTiny}
           onChange={({ target }) => {
-            setState({ isCustomDomain: target.value === '' })
+            setState({ isCustomDomain: target.value === "" })
           }}
         >
           <option value={cozyDomain}>{cozyDomain}</option>

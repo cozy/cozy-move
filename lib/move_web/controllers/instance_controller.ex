@@ -4,8 +4,8 @@ defmodule MoveWeb.InstanceController do
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
-    source = %Instance{url: "bruno.cozy.works", disk: 1_234_456, quota: 5_000_000}
-    target = nil
+    source = get_session(conn, :source)
+    target = get_session(conn, :target)
 
     assigns = %{
       locale: locale,
@@ -41,13 +41,30 @@ defmodule MoveWeb.InstanceController do
 
   def update(conn, %{"locale" => _locale, "side" => side, "url" => url, "domain" => domain})
       when side in @sides do
-    cozy =
-      if String.starts_with?(url, "http") do
-        "#{url}#{domain}"
-      else
-        "https://#{url}#{domain}"
-      end
-
+    cozy = build_url(url, domain)
     redirect(conn, external: cozy)
+  end
+
+  defp build_url(base, domain) do
+    cond do
+      String.starts_with?(base, "http") ->
+        base
+
+      String.contains?(base, ".") ->
+        "https://#{base}"
+
+      true ->
+        "https://#{base}#{domain}"
+    end
+  end
+
+  def create(conn, %{"url" => url}) do
+    locale = MoveWeb.Models.Headers.get_locale(conn)
+    instance = %Instance{url: url, disk: 1_234_456, quota: 5_000_000}
+
+    conn
+    |> put_session(side, instance)
+    |> configure_session(renew: true)
+    |> redirect(to: Routes.instance_path(conn, :index, locale))
   end
 end

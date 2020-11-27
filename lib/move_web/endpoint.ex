@@ -7,7 +7,9 @@ defmodule MoveWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_move_key",
-    signing_salt: "6wrqeuqL"
+    signing_salt: "6wrqeuqL",
+    http_only: true,
+    same_site: "lax"
   ]
 
   socket "/socket", MoveWeb.UserSocket,

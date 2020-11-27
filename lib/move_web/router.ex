@@ -26,11 +26,14 @@ defmodule MoveWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :put_secure_browser_headers
   end
 
   scope "/status", MoveWeb do
     pipe_through :api
     get "/", StatusController, :index
+    post "/instances", InstanceController, :create
   end
 
   # Enables LiveDashboard only for development
