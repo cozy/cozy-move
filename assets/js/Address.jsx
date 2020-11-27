@@ -9,7 +9,6 @@ import {
   WizardDualFieldInput,
 } from "cozy-ui/transpiled/react/Wizard"
 
-const customDomain = "custom"
 const cozyDomain = ".mycozy.cloud"
 const inputID = "cozy-url"
 
@@ -44,7 +43,7 @@ const Address = ({ label, other }) => {
           narrow={state.isCustomDomain}
           medium={isTiny}
           onChange={({ target }) => {
-            setState({ isCustomDomain: target.value === customDomain })
+            setState({ isCustomDomain: target.value === '' })
           }}
         >
           <option value={cozyDomain}>{cozyDomain}</option>
