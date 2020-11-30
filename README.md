@@ -15,6 +15,10 @@ hardware where no one profiles you.
 It is a wizard that helps cozy users to move their Cozy from one place/hoster
 to another.
 
+## Workflow
+
+![Starting from settings](./docs/from-settings.png)
+
 ## Dev
 
 To start your Phoenix server:
