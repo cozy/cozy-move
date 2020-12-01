@@ -12,7 +12,7 @@ hardware where no one profiles you.
 
 ## What is the Cozy-Move component?
 
-It is a wizard that helps cozy users to move their Cozy from one place/hoster
+Cozy-Move is a wizard that helps cozy users to move their Cozy from one place/hoster
 to another.
 
 ## Workflows
