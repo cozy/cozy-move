@@ -48,7 +48,7 @@ production server:
 Your release will live in `_build/prod/rel/cozy_move/`.
 Deploy that directory to your production server and run it with
 `bin/cozy_move start`. You can also build a debian package by typing
-`debuild -us -uc -i -I.git -b`
+`debian/build-deb.sh -t binary`
 
 ## Learn more
 
