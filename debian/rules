@@ -6,6 +6,7 @@ TARGET_ARCH ?= linux-amd64
 
 override_dh_auto_build:
 	MIX_ENV="prod" mix local.hex --force
+	MIX_ENV="prod" mix local.rebar --force
 	MIX_ENV="prod" mix setup
 	MIX_ENV="prod" mix compile
 	MIX_ENV="prod" mix compile_assets
