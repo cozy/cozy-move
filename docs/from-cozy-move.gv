@@ -36,6 +36,7 @@ digraph bitwarden {
 
 	subgraph cluster_target {
 		label="Cozy target"; labeljust="l"; fontname="lato"; fontsize=12; margin=24;
+		t_register [label="Create an OAuth client"]
 		t_export [label="Ask password (and 2FA)"]
 		t_export_2 [label="Check password"]
 		t_token [label="Token for target"]
@@ -70,6 +71,7 @@ digraph bitwarden {
 	t_wait -> t_done [label="GET /"]
 
 	// Server to server
+	m_edit_2 -> t_register [label="POST /auth/register"; style="dashed"]
 	m_target -> t_token [label="POST /auth/access_token"; style="dashed"]
 	t_run -> s_data [label="GET /move/exports/:identifier"; style="dashed"]
 
@@ -78,6 +80,7 @@ digraph bitwarden {
 	s_mail -> s_data [style="invis"]
 	m_edit_1 -> m_source [style="invis"]
 	m_edit_2 -> m_target [style="invis"]
+	t_register -> t_export [style="invis"]
 	t_export_2 -> t_token [style="invis"]
 	t_token -> t_fake_1 -> t_fake_2 -> t_fake_3 -> t_fake_4 -> t_run [style="invis"]
 }
