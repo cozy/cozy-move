@@ -1,0 +1,22 @@
+[Unit]
+Description=cozy-move application
+After=network.target
+
+[Service]
+User=cozy-move
+Group=cozy-move
+RuntimeDirectory=cozy-move
+RuntimeDirectoryMode=0700
+PrivateTmp=true
+WorkingDirectory=/usr/lib/cozy_move
+EnvironmentFile=/etc/cozy-move/env
+Environment=RELEASE_TMP=/run/cozy-move
+SyslogIdentifier=cozy-move
+PIDFile=/run/cozy-move.pid
+ExecStart=/usr/lib/cozy_move/bin/cozy_move start
+ExecStop=/usr/lib/cozy_move/bin/cozy_move stop
+ExecRestart=/usr/lib/cozy_move/bin/cozy_move restart
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

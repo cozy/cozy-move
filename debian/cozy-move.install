@@ -1,0 +1,3 @@
+_build/prod/rel/cozy_move  /usr/lib
+env.template /etc/cozy-move
+debian/21-cozy-move.conf /etc/rsyslog.d

@@ -10,7 +10,13 @@ defmodule Move.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: [
+        cozy_move: [
+          include_executables_for: [:unix],
+          applications: [runtime_tools: :permanent],
+        ]
+      ],
     ]
   end
 
@@ -54,9 +60,14 @@ defmodule Move.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      compile_assets: ["cmd npm run deploy --prefix assets", "phx.digest"],
+      pretty: ["cmd cd assets && prettier --write --no-semi js/*.js js/*.jsx css/*.css"],
       setup: ["deps.get", "cmd npm install --prefix assets"],
-      teardown: ["clean", "deps.clean --all", "cmd rm -rf assets/node_modules"],
-      pretty: ["cmd cd assets && prettier --write --no-semi js/*.js js/*.jsx css/*.css"]
+      teardown: [
+        "deps.clean --all",
+        "cmd rm -rf _build assets/node_modules",
+        "cmd which dh_clean > /dev/null && dh_clean || true"
+      ],
     ]
   end
 end

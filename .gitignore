@@ -36,3 +36,12 @@ npm-debug.log
 # Environment files holding config and sensitive information
 env
 .env
+
+# Debian packaging artefacts
+*.debhelper
+debian/changelog
+debian/cozy-move
+debian/.debhelper
+debian/debhelper*
+debian/*.substvars
+debian/files
