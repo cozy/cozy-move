@@ -1,4 +1,6 @@
 defmodule MoveWeb.Models.Instance do
+  alias MoveWeb.Models.Instance
+
   # A URL is formatted like https://move.cozy.example/
   # Disk and quota are numbers (in bytes) but can be nil
   # A code can only be used with a mail confirmation (on the source thus).
