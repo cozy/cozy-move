@@ -4,8 +4,10 @@ yell() { echo "$0: $*" >&2; }
 die() { yell "$*"; exit 1; }
 try() { "$@" || die "cannot $*"; }
 
+MYPATH=$(realpath ${PWD})
 SCRIPT_DIR=$(dirname $0)
 PROJECT_DIR=$(realpath ${SCRIPT_DIR}/..)
+cd "${PROJECT_DIR}"
 PACKAGE_NAME="cozy-move"
 TODAY=$(date +%Y%m%d%H%M%S)
 EPOCH=""
@@ -23,10 +25,8 @@ cleanup() {
 
 getpackage(){
   echo "Swithing to branch ${BRANCH}"
-  cd ${PROJECT_DIR}
   try git fetch
   try git checkout ${BRANCH}
-  cd -
 }
 
 info(){
@@ -86,7 +86,7 @@ updatechangelog() {
             rm -f .gitout
         fi
     fi
-fi
+  fi
 }
 
 help () {
@@ -139,6 +139,9 @@ while :; do
 done
 
 [ -z "$DEBUILD_FLAGS" ] && DEBUILD_FLAGS="-us -uc -i -I.git "
+
+# Refresh package list
+try ${SUDO} apt-get update
 
 # for checking out git
 if ! which git 1>/dev/null; then
@@ -201,6 +204,7 @@ if [ "$TYPE" == "binary" ]; then
      echo "Missing build dependencies, will install them now:"
          yes y | ${SUDO} mk-build-deps debian/control -ir
      fi
+
      #test and install deps as necessary
      if ! command -v unzip 1>/dev/null 2>&1; then
      echo "Missing unzip, marking for installation"
@@ -222,3 +226,4 @@ EOF
 
 echo "Cleaning up"
 debian/rules clean -s
+cd "${MYPATH}"
