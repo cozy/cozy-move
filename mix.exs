@@ -14,9 +14,9 @@ defmodule Move.MixProject do
       releases: [
         cozy_move: [
           include_executables_for: [:unix],
-          applications: [runtime_tools: :permanent],
+          applications: [runtime_tools: :permanent]
         ]
-      ],
+      ]
     ]
   end
 
@@ -48,6 +48,9 @@ defmodule Move.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      {:castore, "~> 0.1"},
+      {:mint, "~> 1.0"},
+      {:tesla, "~> 1.4"},
       {:number, "~> 1.0"}
     ]
   end
@@ -67,7 +70,7 @@ defmodule Move.MixProject do
         "deps.clean --all",
         "cmd rm -rf _build assets/node_modules",
         "cmd which dh_clean > /dev/null && dh_clean || true"
-      ],
+      ]
     ]
   end
 end
