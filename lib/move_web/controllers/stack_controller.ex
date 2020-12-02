@@ -5,8 +5,9 @@ defmodule MoveWeb.StackController do
 
   def initialize(conn, params) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
+    source = %Instance{} |> Instance.update_from_params(params)
 
-    case Stack.initialize_token(params) do
+    case Stack.initialize_token(source) do
       {:ok, instance} ->
         conn
         |> put_session("source", instance)
@@ -17,17 +18,49 @@ defmodule MoveWeb.StackController do
         nil
     end
 
-    instance = %Instance{url: params["cozy_url"], disk: params["used"], quota: params["quota"]}
-
     redirect(conn, to: Routes.instance_path(conn, :index, locale))
   end
 
-  def callback(conn, %{"side" => side} = params) do
+  def source(conn, params) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
-    instance = %Instance{url: "http://#{side}.cozy.tools/", disk: 1_234_456, quota: 5_000_000}
+    source = get_session(conn, "source")
+
+    instance =
+      if source.state == params["state"] do
+        Instance.update_from_params(source, params)
+      else
+        %Instance{}
+      end
 
     conn
-    |> put_session(side, instance)
+    |> put_session("source", instance)
+    |> configure_session(renew: true)
+    |> redirect(to: Routes.instance_path(conn, :index, locale))
+  end
+
+  def callback(conn, %{"side" => "source"} = params) do
+    locale = MoveWeb.Models.Headers.get_locale(conn)
+    instance = get_session(conn, "source") |> Instance.update_from_params(params)
+
+    conn
+    |> put_session("source", instance)
+    |> configure_session(renew: true)
+    |> redirect(to: Routes.instance_path(conn, :index, locale))
+  end
+
+  def callback(conn, %{"side" => "target"} = params) do
+    locale = MoveWeb.Models.Headers.get_locale(conn)
+    target = get_session(conn, "target")
+
+    instance =
+      if target.state == params["state"] do
+        Instance.update_from_params(target, params)
+      else
+        %Instance{}
+      end
+
+    conn
+    |> put_session("target", instance)
     |> configure_session(renew: true)
     |> redirect(to: Routes.instance_path(conn, :index, locale))
   end

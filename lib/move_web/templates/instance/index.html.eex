@@ -4,7 +4,7 @@
 
 <section>
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Export from" %></h2>
-  <%= if @source do %>
+  <%= if can_use(@source) do %>
     <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-pos-relative">
       <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-pos-absolute u-top-m u-right-m">
         <img src="<%= Routes.static_path(@conn, "/images/icon-pen.svg") %>" alt="<%= gettext "edit" %>" />
@@ -12,7 +12,7 @@
       <p class="u-m-0 u-text u-fz-medium"><%= @source.url %></p>
       <p class="u-m-0 u-caption">
         <span<%= if @error do %> class="u-error"<% end %>><%= size @source.disk, @locale %></span>
-        / <%= size @source.quota, @locale %> <%= gettext "Go" %>
+        <%= if @source.quota do %>/ <%= size @source.quota, @locale %> <%= gettext "GB" %><% end %>
       </p>
     </div>
   <% else %>
@@ -29,15 +29,16 @@
       <% end %>
     <% end %>
   </div>
-  <%= if @target do %>
+  <%= if can_use(@target) do %>
     <div class="u-elevation-1 u-bdrs-4 u-bxz u-p-1 u-pos-relative">
       <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-pos-absolute u-top-m u-right-m">
         <img src="<%= Routes.static_path(@conn, "/images/icon-pen.svg") %>" alt="<%= gettext "edit" %>" />
       </a>
       <p class="u-m-0 u-text u-fz-medium"><%= @target.url %></p>
       <p class="u-m-0 u-caption">
-        <%= size @target.disk, @locale %>
-        <span<%= if @error do %> class="u-error"<% end %>>/ <%= size @target.quota, @locale %> <%= gettext "Go" %></span>
+        <%= size @target.disk, @locale %><%= if @target.quota do %>
+        <span<%= if @error do %> class="u-error"<% end %>>/ <%= size @target.quota, @locale %> <%= gettext "GB" %></span>
+        <% end %>
       </p>
     </div>
   <% else %>
@@ -48,10 +49,10 @@
 
   <%= if @error do %>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "Votre nouveau Cozy %{target} est limité à %{quota} Go de stockage.", target: @target.url, quota: size(@target.quota, @locale) %>
+      <%= gettext "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB.", target: @target.url, quota: size(@target.quota, @locale) %>
     </p>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "Augmentez l'espace de stockage de votre Cozy ou supprimez des données de votre ancien Cozy et videz la corbeille." %>
+      <%= gettext "Increase the storage space of your new Cozy or delete the data not required and empty the trash." %>
     </p>
   <% end %>
 

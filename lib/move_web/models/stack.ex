@@ -4,26 +4,29 @@ defmodule MoveWeb.Models.Stack do
 
   @config Application.get_env(:move, __MODULE__, [])
 
-  def initialize_token(params) do
-    url = params["cozy_url"]
+  def redirect_uri(side), do: @config[:url] <> "callback/" <> side
 
-    case post_initialize_token(url, params["code"]) do
+  def initialize_token(instance) do
+    case post_initialize_token(instance.url, instance.code) do
       {:ok, %Tesla.Env{body: body}} ->
-        {:ok,
-         %Instance{
-           url: url,
-           token: body["access_token"],
-           disk: params["used"],
-           quota: params["quota"]
-         }}
+        {:ok, %Instance{instance | code: "", token: body["access_token"]}}
 
       {:error, error} ->
         {:error, error}
     end
   end
 
+  def exists(instance) do
+    instance.url
+    |> client(encode: :json)
+    |> Tesla.get("/status")
+  end
+
   def register(instance, side) do
     case post_register(instance.url, side) do
+      {:ok, %Tesla.Env{body: %{"error" => error}}} ->
+        {:error, error}
+
       {:ok, %Tesla.Env{body: body}} ->
         {:ok,
          %Instance{instance | client_id: body["client_id"], client_secret: body["client_secret"]}}
@@ -33,12 +36,20 @@ defmodule MoveWeb.Models.Stack do
     end
   end
 
-  def redirect_uri(side), do: @config[:url] <> "callback/" <> side
+  def access_token(instance) do
+    case post_access_token(instance) do
+      {:ok, %Tesla.Env{body: body}} ->
+        {:ok, %Instance{instance | code: "", token: body["access_token"]}}
 
-  defp post_initialize_token(base_url, token) do
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  defp post_initialize_token(base_url, code) do
     headers = [{"accept", "application/json"}]
 
-    body = %{"token" => token}
+    body = %{"code" => code}
 
     base_url
     |> client(encode: :form)
@@ -60,6 +71,20 @@ defmodule MoveWeb.Models.Stack do
     base_url
     |> client(encode: :json)
     |> Tesla.post("/auth/register", body, headers: headers)
+  end
+
+  defp post_access_token(instance) do
+    headers = [{"accept", "application/json"}]
+
+    body = %{
+      "code" => instance.code,
+      "client_id" => instance.client_id,
+      "client_secret" => instance.client_secret
+    }
+
+    instance.url
+    |> client(encode: :form)
+    |> Tesla.post("/move/access_token", body, headers: headers)
   end
 
   defp client(base_url, encode: :json), do: client(base_url, Tesla.Middleware.EncodeJson)

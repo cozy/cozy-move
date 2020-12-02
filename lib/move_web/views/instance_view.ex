@@ -7,7 +7,10 @@ defmodule MoveWeb.InstanceView do
   }
 
   def size(bytes, locale) do
-    (bytes / 1_000_000)
+    (String.to_integer(bytes) / 1_000_000_000)
     |> Number.Delimit.number_to_delimited(@config[locale])
   end
+
+  def can_use(nil), do: false
+  def can_use(instance), do: instance.token || instance.code
 end

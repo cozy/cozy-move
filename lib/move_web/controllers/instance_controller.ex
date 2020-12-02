@@ -1,6 +1,8 @@
 defmodule MoveWeb.InstanceController do
   use MoveWeb, :controller
   alias MoveWeb.Models.Instance
+  alias MoveWeb.Models.Stack
+
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
@@ -41,21 +43,29 @@ defmodule MoveWeb.InstanceController do
   end
 
   def edit(conn, %{"locale" => locale, "side" => side}) when side in @sides do
-    back =
-      if side == "source" do
-        Routes.instance_path(conn, :index, locale)
-      else
-        Routes.instance_path(conn, :select, locale, side)
-      end
-
-    render(conn, "edit.html", back: back, locale: locale, side: side)
+    back = back_for_edit(conn, locale, side)
+    render(conn, "edit.html", back: back, locale: locale, side: side, error: false)
   end
 
-  def update(conn, %{"locale" => _locale, "side" => side, "url" => url, "domain" => domain})
+  def update(conn, %{"locale" => locale, "side" => side, "url" => url, "domain" => domain})
       when side in @sides do
-    cozy = build_url(url, domain)
-    redirect(conn, external: cozy)
+    instance = %Instance{url: build_url(url, domain), state: Instance.new_state()}
+
+    case pre_redirect(instance, side) do
+      {:ok, instance, url} ->
+        conn
+        |> put_session(side, instance)
+        |> configure_session(renew: true)
+        |> redirect(external: url)
+
+      {:error, _} ->
+        back = back_for_edit(conn, locale, side)
+        render(conn, "edit.html", back: back, locale: locale, side: side, error: true)
+    end
   end
+
+  defp back_for_edit(conn, locale, "source"), do: Routes.instance_path(conn, :index, locale)
+  defp back_for_edit(conn, locale, side), do: Routes.instance_path(conn, :select, locale, side)
 
   defp build_url(base, domain) do
     cond do
@@ -67,6 +77,37 @@ defmodule MoveWeb.InstanceController do
 
       true ->
         "https://#{base}#{domain}"
+    end
+  end
+
+  defp pre_redirect(instance, "source") do
+    case Stack.exists(instance) do
+      {:ok, _} ->
+        state = instance.state |> URI.encode()
+        back = Stack.redirect_uri("source") |> URI.encode()
+        url = instance.url <> "move/authorize?state=#{state}&redirect_uri=#{back}"
+        {:ok, instance, url}
+
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  defp pre_redirect(instance, "target") do
+    case Stack.register(instance, "target") do
+      {:ok, target} ->
+        state = target.state |> URI.encode()
+        back = Stack.redirect_uri("target") |> URI.encode()
+        client_id = target.client_id |> URI.encode()
+
+        url =
+          target.url <>
+            "auth/authorize/move?state=#{state}&redirect_uri=#{back}&client_id=#{client_id}"
+
+        {:ok, target, url}
+
+      {:error, error} ->
+        {:error, error}
     end
   end
 

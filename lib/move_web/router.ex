@@ -11,6 +11,7 @@ defmodule MoveWeb.Router do
     pipe_through :api
     get "/status", StatusController, :index
     post "/initialize", StackController, :initialize
+    get "/callback/source", StackController, :source
     post "/callback/:side", StackController, :callback
     post "/instances", InstanceController, :create
   end
