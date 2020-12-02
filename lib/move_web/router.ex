@@ -1,6 +1,18 @@
 defmodule MoveWeb.Router do
   use MoveWeb, :router
 
+  pipeline :api do
+    plug :accepts, ["json"]
+    plug :fetch_session
+    plug :put_secure_browser_headers
+  end
+
+  scope "/status", MoveWeb do
+    pipe_through :api
+    get "/", StatusController, :index
+    post "/instances", InstanceController, :create
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -23,18 +35,6 @@ defmodule MoveWeb.Router do
     get "/:side/add", InstanceController, :add
     get "/:side/edit", InstanceController, :edit
     post "/:side", InstanceController, :update
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
-    plug :fetch_session
-    plug :put_secure_browser_headers
-  end
-
-  scope "/status", MoveWeb do
-    pipe_through :api
-    get "/", StatusController, :index
-    post "/instances", InstanceController, :create
   end
 
   # Enables LiveDashboard only for development
