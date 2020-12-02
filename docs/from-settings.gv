@@ -12,7 +12,7 @@ digraph bitwarden {
 		s_confirm [label="Send mail for confirmation"]
 		s_mail [label="Click on mail link"]
 		s_data [label="Send data from exports"]
-		s_fake_1, s_fake_2, s_fake_3, s_fake_4, s_fake_5, s_fake_6, s_fake_7 [style="invis"]
+		s_fake_1, s_fake_2, s_fake_3, s_fake_4, s_fake_5, s_fake_6, s_fake_7, s_fake_8 [style="invis"]
 	}
 
 	subgraph cluster_move {
@@ -22,6 +22,7 @@ digraph bitwarden {
 		m_index_1 [label="Show summary"]
 		m_select [label="Has a Cozy?"]
 		m_edit [label="Ask Cozy URL"]
+		m_post [label="Redirect to Cozy"]
 		m_target [label="Get info for Cozy target"]
 		m_index_2 [label="Show summary"]
 		m_warning [label="Ask confirmation"]
@@ -42,14 +43,15 @@ digraph bitwarden {
 
 	// User
 	s_settings -> s_start [label="POST /move/initialize"]
-	s_start -> m_source [label="POST /source"]
+	s_start -> m_source [label="POST /redirect/source"]
 	m_source -> m_intro [label="GET /"]
 	m_intro -> m_index_1 [label="GET /:locale/instances"]
 	m_index_1 -> m_select [label="GET /:locale/target/select"]
 	m_select -> m_edit [label="GET /:locale/target/edit"]
-	m_edit -> t_export [label="GET /auth/authorize/move"]
+	m_edit -> m_post [label="POST /target"]
+	m_post -> t_export [label="GET /auth/authorize/move"]
 	t_export -> t_export_2 [label="POST /auth/authorize/move"]
-	t_export_2 -> m_target [label="POST /target"]
+	t_export_2 -> m_target [label="POST /redirect/target"]
 	m_target -> m_index_2 [label="GET /:locale/instances"]
 	m_index_2 -> m_warning [label="(modal)"]
 	m_warning -> m_confirm [label="POST /instances"]
@@ -61,15 +63,15 @@ digraph bitwarden {
 
 	// Server to server
 	m_source -> s_token [label="POST /move/access_token"; style="dashed"]
-	m_edit -> t_register [label="POST /auth/register"; style="dashed"]
+	m_post -> t_register [label="POST /auth/register"; style="dashed"]
 	m_target -> t_token [label="POST /auth/access_token"; style="dashed"]
 	t_run -> s_data [label="GET /move/exports/:identifier"; style="dashed"]
 
 	// Hidden, just to preserve order between nodes inside clusters
 	s_start -> s_token [style="invis"]
-	s_token -> s_fake_1 -> s_fake_2 -> s_fake_3 -> s_fake_4 -> s_fake_5 -> s_fake_6 -> s_fake_7 -> s_confirm [style="invis"]
+	s_token -> s_fake_1 -> s_fake_2 -> s_fake_3 -> s_fake_4 -> s_fake_5 -> s_fake_6 -> s_fake_7 -> s_fake_8 -> s_confirm [style="invis"]
 	s_mail -> s_data [style="invis"]
-	m_edit -> m_target [style="invis"]
+	m_post -> m_target [style="invis"]
 	t_register -> t_export [style="invis"]
 	t_export_2 -> t_token [style="invis"]
 	t_token -> t_fake_1 -> t_fake_2 -> t_fake_3 -> t_fake_4 -> t_run [style="invis"]
