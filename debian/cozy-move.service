@@ -14,6 +14,8 @@ Environment=RELEASE_TMP=/run/cozy-move
 SyslogIdentifier=cozy-move
 PIDFile=/run/cozy-move.pid
 ExecStart=/usr/lib/cozy_move/bin/cozy_move start
+ExecStartPost=-/usr/local/sbin/cozy-move-post-start.sh
+ExecStop=-/usr/local/sbin/cozy-move-pre-stop.sh
 ExecStop=/usr/lib/cozy_move/bin/cozy_move stop
 ExecRestart=/usr/lib/cozy_move/bin/cozy_move restart
 Restart=always
