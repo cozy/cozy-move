@@ -8,3 +8,5 @@ config :move, MoveWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :move, MoveWeb.Models.Stack, url: "http://localhost:4002/"

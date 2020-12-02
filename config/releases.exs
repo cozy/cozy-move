@@ -28,3 +28,6 @@ config :move, MoveWeb.Endpoint,
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
+
+config :move, MoveWeb.Models.Stack,
+  url: System.get_env("COZY_MOVE_URL") || "https://move.cozycloud.cc/"

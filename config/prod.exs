@@ -56,3 +56,5 @@ config :logger, level: :info
 # DON'T import the config/prod.secret.exs or you will loose
 # runtime config as secrets will be embedded in release
 # import_config "prod.secret.exs"
+
+config :move, MoveWeb.Models.Stack, url: "https://move.cozycloud.cc/"
