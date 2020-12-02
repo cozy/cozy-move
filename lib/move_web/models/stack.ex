@@ -36,7 +36,7 @@ defmodule MoveWeb.Models.Stack do
   def redirect_uri(side), do: @config[:url] <> "callback/" <> side
 
   defp post_initialize_token(base_url, token) do
-    headers = [ {"accept", "application/json"} ]
+    headers = [{"accept", "application/json"}]
 
     body = %{"token" => token}
 
@@ -63,7 +63,9 @@ defmodule MoveWeb.Models.Stack do
   end
 
   defp client(base_url, encode: :json), do: client(base_url, Tesla.Middleware.EncodeJson)
-  defp client(base_url, encode: :form), do: client(base_url, Tesla.Middleware.EncodeFormUrlencoded)
+
+  defp client(base_url, encode: :form),
+    do: client(base_url, Tesla.Middleware.EncodeFormUrlencoded)
 
   defp client(base_url, encode_middleware) do
     middleware = [

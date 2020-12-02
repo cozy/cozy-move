@@ -5,13 +5,16 @@ defmodule MoveWeb.StackController do
 
   def initialize(conn, params) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
+
     case Stack.initialize_token(params) do
       {:ok, instance} ->
         conn
         |> put_session("source", instance)
         |> configure_session(renew: true)
 
-      _ -> nil # Ignore errors
+      # Ignore errors
+      _ ->
+        nil
     end
 
     instance = %Instance{url: params["cozy_url"], disk: params["used"], quota: params["quota"]}
