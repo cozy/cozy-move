@@ -43,7 +43,7 @@ digraph bitwarden {
 
 	// User
 	s_settings -> s_start [label="POST /move/initialize"]
-	s_start -> m_source [label="POST /redirect/source"]
+	s_start -> m_source [label="POST /initialize"]
 	m_source -> m_intro [label="GET /"]
 	m_intro -> m_index_1 [label="GET /:locale/instances"]
 	m_index_1 -> m_select [label="GET /:locale/target/select"]
@@ -51,7 +51,7 @@ digraph bitwarden {
 	m_edit -> m_post [label="POST /target"]
 	m_post -> t_export [label="GET /auth/authorize/move"]
 	t_export -> t_export_2 [label="POST /auth/authorize/move"]
-	t_export_2 -> m_target [label="POST /redirect/target"]
+	t_export_2 -> m_target [label="POST /callback/target"]
 	m_target -> m_index_2 [label="GET /:locale/instances"]
 	m_index_2 -> m_warning [label="(modal)"]
 	m_warning -> m_confirm [label="POST /instances"]

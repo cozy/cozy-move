@@ -7,9 +7,11 @@ defmodule MoveWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/status", MoveWeb do
+  scope "/", MoveWeb do
     pipe_through :api
-    get "/", StatusController, :index
+    get "/status", StatusController, :index
+    post "/initialize", StackController, :initialize
+    post "/callback/:side", StackController, :callback
     post "/instances", InstanceController, :create
   end
 

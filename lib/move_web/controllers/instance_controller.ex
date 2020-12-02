@@ -1,6 +1,6 @@
 defmodule MoveWeb.InstanceController do
   use MoveWeb, :controller
-  alias MoveWeb.Models.Instance, as: Instance
+  alias MoveWeb.Models.Instance
   @sides ["source", "target"]
 
   def index(conn, %{"locale" => locale}) do
@@ -70,13 +70,8 @@ defmodule MoveWeb.InstanceController do
     end
   end
 
-  def create(conn, %{"side" => side, "url" => url}) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
-    instance = %Instance{url: url, disk: 1_234_456, quota: 5_000_000}
-
-    conn
-    |> put_session(side, instance)
-    |> configure_session(renew: true)
-    |> redirect(to: Routes.instance_path(conn, :index, locale))
+  def create(conn, _params) do
+    source = get_session(conn, :source)
+    redirect(conn, external: source.url)
   end
 end
