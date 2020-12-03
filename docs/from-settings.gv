@@ -11,7 +11,9 @@ digraph bitwarden {
 		s_token [label="Token for source"]
 		s_confirm [label="Send mail for confirmation"]
 		s_mail [label="Click on mail link"]
-		s_data [label="Send data from exports"]
+		s_ready [label="Export ready"]
+		s_data [label="Send archive"]
+		s_unblock [label="Unblock the Cozy"]
 		s_fake_1, s_fake_2, s_fake_3, s_fake_4, s_fake_5, s_fake_6, s_fake_7, s_fake_8 [style="invis"]
 	}
 
@@ -35,6 +37,7 @@ digraph bitwarden {
 		t_export [label="Ask password (and 2FA)"]
 		t_export_2 [label="Check password"]
 		t_token [label="Token for target"]
+		t_block [label="Block the Cozy"]
 		t_run [label="Start the moving"]
 		t_wait [label="Show waiting page"]
 		t_done [label="Send mail\nwhen finished"; shape="Msquare"]
@@ -57,22 +60,28 @@ digraph bitwarden {
 	m_warning -> m_confirm [label="POST /instances"]
 	m_confirm -> s_confirm [label="POST /move/on_your_marks"]
 	s_confirm -> s_mail [label="GET /move/set"]
-	s_mail -> t_run [label="GET /move/go"]
-	t_run -> t_wait [label="GET /move/importing"]
-	t_wait -> t_done [label="GET /"]
+	s_mail -> t_wait [label="GET /move/importing"]
 
 	// Server to server
 	m_source -> s_token [label="POST /move/access_token"; style="dashed"]
 	m_post -> t_register [label="POST /auth/register"; style="dashed"]
 	m_target -> t_token [label="POST /auth/access_token"; style="dashed"]
-	t_run -> s_data [label="GET /move/exports/:identifier"; style="dashed"]
+	s_mail -> t_block [label="POST /move/block"; style="dashed"]
+	s_mail -> s_ready [label="(prepare export)"]
+	s_ready -> t_run [label="POST /move/go"; style="dashed"]
+	t_run -> s_data [label="GET /move/exports/data/:id"; style="dashed"]
+	t_run -> s_data [style="dashed"]
+	t_run -> s_data [style="dashed"]
+	t_run -> s_unblock [label="DELETE /move/exports/:id"; style="dashed"]
+	t_run -> t_done [label="(import done)"; style="dashed"]
 
 	// Hidden, just to preserve order between nodes inside clusters
 	s_start -> s_token [style="invis"]
 	s_token -> s_fake_1 -> s_fake_2 -> s_fake_3 -> s_fake_4 -> s_fake_5 -> s_fake_6 -> s_fake_7 -> s_fake_8 -> s_confirm [style="invis"]
-	s_mail -> s_data [style="invis"]
 	m_post -> m_target [style="invis"]
 	t_register -> t_export [style="invis"]
 	t_export_2 -> t_token [style="invis"]
-	t_token -> t_fake_1 -> t_fake_2 -> t_fake_3 -> t_fake_4 -> t_run [style="invis"]
+	t_token -> t_fake_1 -> t_fake_2 -> t_fake_3 -> t_block [style="invis"]
+	t_block -> t_wait -> t_run -> t_fake_4 -> t_done [style="invis"]
+	s_ready -> s_data -> s_unblock [style="invis"]
 }
