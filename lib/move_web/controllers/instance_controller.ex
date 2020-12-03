@@ -113,10 +113,11 @@ defmodule MoveWeb.InstanceController do
 
   def create(conn, _params) do
     source = get_session(conn, :source)
-    url = source.url <> "move/on_your_marks"
+    url = source.url <> "move/request"
 
     conn
-    |> Plug.Conn.put_status(:temporary_redirect)
+    |> clear_session()
+    |> put_status(:temporary_redirect)
     |> redirect(external: url)
   end
 end
