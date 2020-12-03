@@ -48,7 +48,7 @@ defmodule MoveWeb.StackController do
         %Instance{}
       end
 
-    case Stack.access_token(source) do
+    case Stack.access_token(instance) do
       {:ok, instance} ->
         conn
         |> put_session("target", instance)

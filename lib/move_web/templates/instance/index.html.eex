@@ -62,16 +62,30 @@
 </section>
 
 <footer>
-  <button class="c-btn"
-    <%= if @source && @target do %>
-      id="react-warning"
-      data-title="<%= gettext "Warning" %>"
-      data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source.url %> "
-      data-confirm="<%= gettext "Erase the data" %>"
-      data-cancel="<%= gettext "Cancel" %>"
-    <% else %>
-      disabled="true"
-    <% end %>>
-    <span><%= gettext "Start the move!" %></span>
-  </button>
+  <%= if @source && @target do %>
+    <%= form_tag(Routes.instance_path(@conn, :create), method: "POST") do %>
+      <%= if @source.token do %>
+        <input type="hidden" name="token" value="<%= @source.token %>" >
+        <input type="hidden" name="client_id" value="<%= @source.client_id %>" >
+        <input type="hidden" name="client_secret" value="<%= @source.client_secret %>" >
+      <% else %>
+        <input type="hidden" name="code" value="<%= @source.code %>" >
+      <% end %>
+      <input type="hidden" name="target_url" value="<%= @target.url %>" >
+      <input type="hidden" name="target_token" value="<%= @target.token %>" >
+      <input type="hidden" name="target_client_id" value="<%= @target.client_id %>" >
+      <input type="hidden" name="target_client_secret" value="<%= @target.client_secret %>" >
+      <input type="submit" class="c-btn"
+        id="react-warning"
+        data-title="<%= gettext "Warning" %>"
+        data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source.url %> "
+        data-confirm="<%= gettext "Erase the data" %>"
+        data-cancel="<%= gettext "Cancel" %>"
+        name="<%= gettext "Start the move!" %>">
+    <% end %>
+  <% else %>
+    <button class="c-btn" disabled="true">
+      <span><%= gettext "Start the move!" %></span>
+    </button>
+  <% end %>
 </footer>
