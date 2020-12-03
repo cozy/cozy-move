@@ -15,10 +15,9 @@ defmodule MoveWeb.StackController do
 
       # Ignore errors
       _ ->
-        nil
+        conn
     end
-
-    redirect(conn, to: Routes.instance_path(conn, :index, locale))
+    |> redirect(to: Routes.instance_path(conn, :index, locale))
   end
 
   def source(conn, params) do
@@ -38,17 +37,7 @@ defmodule MoveWeb.StackController do
     |> redirect(to: Routes.instance_path(conn, :index, locale))
   end
 
-  def callback(conn, %{"side" => "source"} = params) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
-    instance = get_session(conn, "source") |> Instance.update_from_params(params)
-
-    conn
-    |> put_session("source", instance)
-    |> configure_session(renew: true)
-    |> redirect(to: Routes.instance_path(conn, :index, locale))
-  end
-
-  def callback(conn, %{"side" => "target"} = params) do
+  def target(conn, params) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
     target = get_session(conn, "target")
 
@@ -59,9 +48,16 @@ defmodule MoveWeb.StackController do
         %Instance{}
       end
 
-    conn
-    |> put_session("target", instance)
-    |> configure_session(renew: true)
+    case Stack.access_token(source) do
+      {:ok, instance} ->
+        conn
+        |> put_session("target", instance)
+        |> configure_session(renew: true)
+
+      # Ignore errors
+      _ ->
+        conn
+    end
     |> redirect(to: Routes.instance_path(conn, :index, locale))
   end
 end

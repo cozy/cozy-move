@@ -33,7 +33,8 @@ defmodule MoveWeb.Models.Instance do
       | url: params["cozy_url"] || instance.url,
         code: params["code"],
         disk: params["used"],
-        quota: params["quota"]
+        quota: params["quota"],
+        state: new_state()
     }
   end
 
