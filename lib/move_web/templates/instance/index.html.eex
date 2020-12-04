@@ -49,7 +49,7 @@
 
   <%= if @error == :same do %>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "Sorry, you cannot choose twice the same Cozy!" %>
+      <%= gettext "Sorry, you cannot choose the same Cozy twice!" %>
     </p>
   <% end %>
 

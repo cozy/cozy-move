@@ -170,5 +170,5 @@ msgid "The storage space of your Cozy is insufficient to move all your data. You
 msgstr "Votre nouveau Cozy %{target} est limité à %{quota} Go de stockage."
 
 #: lib/move_web/templates/instance/index.html.eex:52
-msgid "Sorry, you cannot choose twice the same Cozy!"
+msgid "Sorry, you cannot choose the same Cozy twice!"
 msgstr "Désolé, le même Cozy ne peut pas être choisi deux fois!"
