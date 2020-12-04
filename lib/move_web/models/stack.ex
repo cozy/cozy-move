@@ -6,16 +6,6 @@ defmodule MoveWeb.Models.Stack do
 
   def redirect_uri(side), do: @config[:url] <> "callback/" <> side
 
-  def initialize_token(instance) do
-    case post_initialize_token(instance.url, instance.code) do
-      {:ok, %Tesla.Env{body: body}} ->
-        {:ok, %Instance{instance | code: "", token: body["access_token"]}}
-
-      {:error, error} ->
-        {:error, error}
-    end
-  end
-
   def exists(instance) do
     instance.url
     |> client(encode: :json)
@@ -44,16 +34,6 @@ defmodule MoveWeb.Models.Stack do
       {:error, error} ->
         {:error, error}
     end
-  end
-
-  defp post_initialize_token(base_url, code) do
-    headers = [{"accept", "application/json"}]
-
-    body = %{"code" => code}
-
-    base_url
-    |> client(encode: :form)
-    |> Tesla.post("/move/access_token", body, headers: headers)
   end
 
   defp post_register(base_url, side) do

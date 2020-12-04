@@ -5,9 +5,13 @@ defmodule MoveWeb.StackController do
 
   def initialize(conn, params) do
     locale = MoveWeb.Models.Headers.get_locale(conn)
-    source = %Instance{} |> Instance.update_from_params(params)
 
-    case Stack.initialize_token(source) do
+    source =
+      %Instance{}
+      |> Instance.update_from_params(params)
+      |> Instance.update_client(params)
+
+    case Stack.access_token(source) do
       {:ok, instance} ->
         conn
         |> put_session("source", instance)

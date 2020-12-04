@@ -38,6 +38,14 @@ defmodule MoveWeb.Models.Instance do
     }
   end
 
+  def update_client(instance, params) do
+    %Instance{
+      instance
+      | client_id: params["client_id"],
+        client_secret: params["client_secret"]
+    }
+  end
+
   def new_state() do
     :crypto.strong_rand_bytes(@state_length)
     |> Base.encode64(padding: false)
