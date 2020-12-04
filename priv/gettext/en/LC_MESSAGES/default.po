@@ -11,34 +11,103 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2\n"
 
-#: lib/move_web/templates/instance/index.html.eex:2
-#: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
-msgid "Move my Cozy"
+#: lib/move_web/templates/instance/add.html.eex:16
+msgid "\""
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:15
+msgid "Address of my Cozy"
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:4
 msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:5
-msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
+#: lib/move_web/templates/instance/index.html.eex:89
+msgid "Cancel"
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:6
-msgid "Once the transfer is completed, your old Cozy will be deleted."
+#: lib/move_web/templates/instance/add.html.eex:10
+msgid "Click here to create your new Cozy"
 msgstr ""
 
-#: lib/move_web/templates/page/index.html.eex:11
-msgid "Let's move!"
+#: lib/move_web/templates/instance/add.html.eex:2
+msgid "Create a new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:3
+msgid "Enter your Cozy address"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:88
+msgid "Erase the data"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:6
 msgid "Export from"
 msgstr ""
 
+#: lib/move_web/templates/instance/edit.html.eex:9
+msgid "Fill in the address of the Cozy from which you wish to export your data"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:11
+msgid "Fill in the address of the Cozy to which you wish to export your data"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:6
+msgid "Follow the following steps to move to a new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:15
+#: lib/move_web/templates/instance/index.html.eex:40
+msgid "GB"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:15
+msgid "I already have my new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/select.html.eex:8
+msgid "I have already a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/edit.html.eex:23
+msgid "I have forgotten the address of my Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/select.html.eex:12
+msgid "I have not yet a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:61
+msgid "Increase the storage space of your new Cozy or delete the data not required and empty the trash."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:11
+msgid "Let's move!"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:2
+#: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
+msgid "Move my Cozy"
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:6
+msgid "Once the transfer is completed, your old Cozy will be deleted."
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:14
+msgid "Once you have created your Cozy, go back to the previous screen and click on \""
+msgstr ""
+
 #: lib/move_web/templates/instance/index.html.eex:20
 #: lib/move_web/templates/instance/index.html.eex:46 lib/move_web/templates/instance/select.html.eex:2
 msgid "Select a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:52
+msgid "Sorry, you cannot choose the same Cozy twice!"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:90
@@ -50,105 +119,36 @@ msgstr ""
 msgid "Switch"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:25
-msgid "To"
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:66
-msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
-msgstr ""
-
-#: lib/move_web/templates/layout/app.html.eex:13
-msgid "back"
-msgstr ""
-
-#: lib/move_web/templates/instance/select.html.eex:8
-msgid "I have already a Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/select.html.eex:12
-msgid "I have not yet a Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:16
-msgid "\""
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:10
-msgid "Click here to create your new Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:2
-msgid "Create a new Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:6
-msgid "Follow the following steps to move to a new Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:15
-msgid "I already have my new Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:14
-msgid "Once you have created your Cozy, go back to the previous screen and click on \""
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:15
-msgid "Address of my Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:3
-msgid "Enter your Cozy address"
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:9
-msgid "Fill in the address of the Cozy from which you wish to export your data"
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:11
-msgid "Fill in the address of the Cozy to which you wish to export your data"
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:89
-msgid "Cancel"
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:88
-msgid "Erase the data"
-msgstr ""
-
 #: lib/move_web/templates/instance/index.html.eex:87
 msgid "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:86
-msgid "Warning"
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:23
-msgid "I have forgotten the address of my Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/edit.html.eex:14
-msgid "other"
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:54
-msgid "Augmentez l'espace de stockage de votre Cozy ou supprimez des données de votre ancien Cozy et videz la corbeille."
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:15
-#: lib/move_web/templates/instance/index.html.eex:40
-msgid "Go"
+#: lib/move_web/templates/instance/index.html.eex:58
+msgid "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB."
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:19
 msgid "This address doesn’t seem to be a cozy. Please check the address you provide."
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:51
-msgid "Votre nouveau Cozy %{target} est limité à %{quota} Go de stockage."
+#: lib/move_web/templates/instance/index.html.eex:25
+msgid "To"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:86
+msgid "Warning"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:66
+msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgstr ""
+
+#: lib/move_web/templates/page/index.html.eex:5
+msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
+msgstr ""
+
+#: lib/move_web/templates/layout/app.html.eex:13
+msgid "back"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:10
@@ -156,19 +156,6 @@ msgstr ""
 msgid "edit"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:15
-#: lib/move_web/templates/instance/index.html.eex:40
-msgid "GB"
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:61
-msgid "Increase the storage space of your new Cozy or delete the data not required and empty the trash."
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:58
-msgid "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB."
-msgstr ""
-
-#: lib/move_web/templates/instance/index.html.eex:52
-msgid "Sorry, you cannot choose the same Cozy twice!"
+#: lib/move_web/templates/instance/edit.html.eex:14
+msgid "other"
 msgstr ""

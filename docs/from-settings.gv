@@ -72,7 +72,7 @@ digraph bitwarden {
 	t_run -> s_data [label="GET /move/exports/data/:id"; style="dashed"]
 	t_run -> s_data [style="dashed"]
 	t_run -> s_data [style="dashed"]
-	t_run -> s_unblock [label="DELETE /move/exports/:id"; style="dashed"]
+	t_run -> s_unblock [label="POST /move/finalize"; style="dashed"]
 	t_run -> t_done [label="(import done)"; style="dashed"]
 
 	// Hidden, just to preserve order between nodes inside clusters
