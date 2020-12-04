@@ -12,6 +12,18 @@ defmodule MoveWeb.Models.Instance do
   # move and the stack.
   defstruct [:url, :disk, :quota, :code, :token, :state, :client_id, :client_secret]
 
+  def check_valid_move(source, target) do
+    cond do
+      same_instance(source, target) -> :same
+      quota_error(source, target) -> :quota
+      true -> nil
+    end
+  end
+
+  def same_instance(nil, _target), do: false
+  def same_instance(_source, nil), do: false
+  def same_instance(source, target), do: source.url == target.url
+
   def quota_error(nil, _target), do: false
   def quota_error(_source, nil), do: false
   # Self-hosted can have unlimited quota

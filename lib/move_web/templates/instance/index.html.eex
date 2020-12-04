@@ -47,7 +47,13 @@
     </a>
   <% end %>
 
-  <%= if @error do %>
+  <%= if @error == :same do %>
+    <p class="u-error u-fs-italic u-fz-small u-mb-0">
+      <%= gettext "Sorry, you cannot choose twice the same Cozy!" %>
+    </p>
+  <% end %>
+
+  <%= if @error == :quota do %>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
       <%= gettext "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB.", target: @target.url, quota: size(@target.quota, @locale) %>
     </p>
@@ -62,7 +68,7 @@
 </section>
 
 <footer>
-  <%= if @source && @target do %>
+  <%= if @source && @target && !@error do %>
     <%= form_tag(Routes.instance_path(@conn, :create), method: "POST") do %>
       <%= if @source.token do %>
         <input type="hidden" name="token" value="<%= @source.token %>" >

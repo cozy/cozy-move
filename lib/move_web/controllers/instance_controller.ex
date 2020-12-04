@@ -14,7 +14,7 @@ defmodule MoveWeb.InstanceController do
       back: Routes.page_path(conn, :index, locale),
       source: source,
       target: target,
-      error: Instance.quota_error(source, target),
+      error: Instance.check_valid_move(source, target),
       can_swap: Instance.can_swap(source, target)
     }
 
