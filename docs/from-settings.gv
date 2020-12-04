@@ -46,7 +46,7 @@ digraph bitwarden {
 
 	// User
 	s_settings -> s_start [label="POST /move/initialize"]
-	s_start -> m_source [label="POST /initialize\ncode client_id client_secret"]
+	s_start -> m_source [label="POST /initialize\ncozy_url code client_id client_secret"]
 	m_source -> m_intro [label="GET /"]
 	m_intro -> m_index_1 [label="GET /:locale/instances"]
 	m_index_1 -> m_select [label="GET /:locale/target/select"]
