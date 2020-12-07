@@ -21,9 +21,10 @@ import Warning from "./Warning.jsx"
 
   const warning = d.getElementById("react-warning")
   if (warning) {
-    const props = { ...warning.dataset, button: warning.innerText }
-    const app = <Warning {...props} />
-    wrapReact(warning.parentElement, app)
+    const footer = warning.parentElement
+    const props = { ...warning.dataset, button: warning.name }
+    const app = <Warning form={footer.parentElement} {...props} />
+    wrapReact(footer, app)
   }
 
   const address = d.getElementById("react-address")

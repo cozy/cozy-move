@@ -59,7 +59,7 @@ digraph bitwarden {
 	m_edit_2 -> m_post_2 [label="POST /target"]
 	m_post_2 -> t_export [label="GET /auth/authorize/move"]
 	t_export -> t_export_2 [label="POST /auth/authorize/move"]
-	t_export_2 -> m_target [label="POST /callback/target\ncode"]
+	t_export_2 -> m_target [label="GET /callback/target\ncode"]
 	m_target -> m_index_3 [label="GET /:locale/instances"]
 	m_index_3 -> m_warning [label="(modal)"]
 	m_warning -> m_confirm [label="POST /instances"]

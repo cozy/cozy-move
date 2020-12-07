@@ -9,22 +9,25 @@ const Markdown = ({ content }) => (
   <div dangerouslySetInnerHTML={{ __html: snarkdown(content) }}></div>
 )
 
-const Warning = ({ button, title, content, cancel, confirm }) => {
+const Warning = ({ button, title, content, cancel, confirm, form }) => {
   const { isMobile } = useBreakpoints()
   const [state, setState] = useState({ opened: false })
+  const submit = () => {
+    form.submit()
+  }
   const toggle = () =>
     setState((state) => ({ ...state, opened: !state.opened }))
 
   const Buttons = () => (
     <>
       <Button theme="secondary" onClick={toggle} label={cancel} />
-      <Button theme="danger" label={confirm} onClick={() => alert("click")} />
+      <Button theme="danger" label={confirm} onClick={submit} />
     </>
   )
 
   return (
     <>
-      <button className="c-btn" onClick={toggle}>
+      <button className="c-btn" onClick={toggle} type="button">
         <span>{button}</span>
       </button>
       <ConfirmDialog

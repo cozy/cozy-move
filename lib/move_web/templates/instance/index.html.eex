@@ -67,20 +67,20 @@
   </p>
 </section>
 
-<footer>
-  <%= if @source && @target && !@error do %>
-    <%= form_tag(Routes.instance_path(@conn, :create, @locale), method: "POST") do %>
-      <%= if @source.token do %>
-        <input type="hidden" name="token" value="<%= @source.token %>" >
-        <input type="hidden" name="client_id" value="<%= @source.client_id %>" >
-        <input type="hidden" name="client_secret" value="<%= @source.client_secret %>" >
-      <% else %>
-        <input type="hidden" name="code" value="<%= @source.code %>" >
-      <% end %>
-      <input type="hidden" name="target_url" value="<%= @target.url %>" >
-      <input type="hidden" name="target_token" value="<%= @target.token %>" >
-      <input type="hidden" name="target_client_id" value="<%= @target.client_id %>" >
-      <input type="hidden" name="target_client_secret" value="<%= @target.client_secret %>" >
+<%= if @source && @target && !@error do %>
+  <%= form_tag(Routes.instance_path(@conn, :create, @locale), method: "POST") do %>
+    <%= if @source.token do %>
+      <input type="hidden" name="token" value="<%= @source.token %>" >
+      <input type="hidden" name="client_id" value="<%= @source.client_id %>" >
+      <input type="hidden" name="client_secret" value="<%= @source.client_secret %>" >
+    <% else %>
+      <input type="hidden" name="code" value="<%= @source.code %>" >
+    <% end %>
+    <input type="hidden" name="target_url" value="<%= @target.url %>" >
+    <input type="hidden" name="target_token" value="<%= @target.token %>" >
+    <input type="hidden" name="target_client_id" value="<%= @target.client_id %>" >
+    <input type="hidden" name="target_client_secret" value="<%= @target.client_secret %>" >
+    <footer>
       <input type="submit" class="c-btn"
         id="react-warning"
         data-title="<%= gettext "Warning" %>"
@@ -88,10 +88,12 @@
         data-confirm="<%= gettext "Erase the data" %>"
         data-cancel="<%= gettext "Cancel" %>"
         name="<%= gettext "Start the move!" %>">
-    <% end %>
-  <% else %>
+    </footer>
+  <% end %>
+<% else %>
+  <footer>
     <button class="c-btn" disabled="true">
       <span><%= gettext "Start the move!" %></span>
     </button>
-  <% end %>
-</footer>
+  </footer>
+<% end %>

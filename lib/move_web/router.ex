@@ -15,7 +15,7 @@ defmodule MoveWeb.Router do
     get "/status", StatusController, :index
     post "/initialize", StackController, :initialize
     get "/callback/source", StackController, :source
-    post "/callback/target", StackController, :target
+    get "/callback/target", StackController, :target
   end
 
   pipeline :browser do
@@ -35,12 +35,12 @@ defmodule MoveWeb.Router do
     pipe_through :browser
     get "/", PageController, :index
     get "/instances", InstanceController, :index
+    post "/instances", InstanceController, :create
     post "/instances/swap", InstanceController, :swap
     get "/:side/select", InstanceController, :select
     get "/:side/add", InstanceController, :add
     get "/:side/edit", InstanceController, :edit
     post "/:side", InstanceController, :update
-    post "/instances", InstanceController, :create
   end
 
   # Enables LiveDashboard only for development
