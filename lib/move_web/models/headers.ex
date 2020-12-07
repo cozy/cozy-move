@@ -1,6 +1,11 @@
 # I can't make set_locale works for me, but I've taken a valuable part:
 # https://github.com/smeevil/set_locale/blob/master/lib/headers.ex
 defmodule MoveWeb.Models.Headers do
+  @moduledoc """
+  This module provides some helpers for working with HTTP headers, like
+  extracting a locale from the Accept-Language header.
+  """
+
   @supported_locales Gettext.known_locales(MoveWeb.Gettext)
   @default_locale "en"
 

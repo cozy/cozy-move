@@ -1,4 +1,9 @@
 defmodule MoveWeb.Models.Instance do
+  @moduledoc """
+  This module provides a struct for instances that can be persisted as cookies.
+  And there are a few related functions that work with this struct.
+  """
+
   alias MoveWeb.Models.Instance
 
   # Use 16 bytes of entropy for states
@@ -58,7 +63,7 @@ defmodule MoveWeb.Models.Instance do
     }
   end
 
-  def new_state() do
+  def new_state do
     :crypto.strong_rand_bytes(@state_length)
     |> Base.encode64(padding: false)
     |> binary_part(0, @state_length)

@@ -1,4 +1,9 @@
 defmodule MoveWeb.Plugs.SetLocale do
+  @moduledoc """
+  This module provides a plug for setting the locale for gettext from the
+  Plug.Conn params.
+  """
+
   @supported_locales Gettext.known_locales(MoveWeb.Gettext)
 
   def init(_options), do: nil

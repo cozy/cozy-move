@@ -1,10 +1,12 @@
 defmodule MoveWeb.Models.Stack do
+  @moduledoc """
+  This module provides some helpers for making HTTP call to a cozy-stack.
+  """
+
   use Tesla
   alias MoveWeb.Models.Instance
 
-  @config Application.get_env(:move, __MODULE__, [])
-
-  def redirect_uri(side), do: @config[:url] <> "callback/" <> side
+  def redirect_uri(side), do: move_url() <> "callback/" <> side
 
   def exists(instance) do
     instance.url
@@ -36,13 +38,15 @@ defmodule MoveWeb.Models.Stack do
     end
   end
 
+  defp move_url, do: Application.get_env(:move, __MODULE__, [])
+
   defp post_register(base_url, side) do
     headers = [{"accept", "application/json"}]
 
     body = %{
       "client_name" => "Cozy-Move",
       "client_kind" => "web",
-      "client_uri" => @config[:url],
+      "client_uri" => move_url(),
       "redirect_uris" => [redirect_uri(side)],
       "software_id" => "github.com/cozy/cozy-move",
       "software_version" => Mix.Project.config()[:version]

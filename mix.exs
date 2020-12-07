@@ -51,7 +51,8 @@ defmodule Move.MixProject do
       {:castore, "~> 0.1"},
       {:mint, "~> 1.0"},
       {:tesla, "~> 1.4"},
-      {:number, "~> 1.0"}
+      {:number, "~> 1.0"},
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
 

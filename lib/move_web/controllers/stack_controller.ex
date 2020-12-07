@@ -1,10 +1,11 @@
 defmodule MoveWeb.StackController do
   use MoveWeb, :controller
+  alias MoveWeb.Models.Headers
   alias MoveWeb.Models.Instance
   alias MoveWeb.Models.Stack
 
   def initialize(conn, params) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
+    locale = Headers.get_locale(conn)
 
     source =
       %Instance{}
@@ -25,7 +26,7 @@ defmodule MoveWeb.StackController do
   end
 
   def source(conn, params) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
+    locale = Headers.get_locale(conn)
     source = get_session(conn, "source")
 
     instance =
@@ -42,7 +43,7 @@ defmodule MoveWeb.StackController do
   end
 
   def target(conn, params) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
+    locale = Headers.get_locale(conn)
     target = get_session(conn, "target")
 
     instance =

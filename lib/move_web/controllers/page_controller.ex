@@ -1,8 +1,9 @@
 defmodule MoveWeb.PageController do
   use MoveWeb, :controller
+  alias MoveWeb.Models.Headers
 
   def detect_lang(conn, _params) do
-    locale = MoveWeb.Models.Headers.get_locale(conn)
+    locale = Headers.get_locale(conn)
     redirect(conn, to: Routes.page_path(conn, :index, locale))
   end
 
