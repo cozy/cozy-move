@@ -67,3 +67,8 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 config :move, MoveWeb.Models.Stack, url: "http://localhost:4000/"
+
+# /!\ The CSP must be configured at compilation time
+config :move, MoveWeb.Router,
+  csp:
+    "default-src 'self'; connect-src 'self'; img-src 'self' data: ; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'none';"

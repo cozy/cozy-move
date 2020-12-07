@@ -1,10 +1,13 @@
 defmodule MoveWeb.Router do
   use MoveWeb, :router
 
+  # credo:disable-for-next-line
+  @csp Application.get_env(:move, __MODULE__, false)[:csp]
+
   pipeline :api do
     plug :accepts, ["json"]
     plug :fetch_session
-    plug :put_secure_browser_headers
+    plug :put_secure_browser_headers, %{"content-security-policy" => @csp}
   end
 
   scope "/", MoveWeb do
@@ -13,14 +16,13 @@ defmodule MoveWeb.Router do
     post "/initialize", StackController, :initialize
     get "/callback/source", StackController, :source
     post "/callback/target", StackController, :target
-    post "/instances", InstanceController, :create
   end
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug :put_secure_browser_headers, %{"content-security-policy" => @csp}
     plug MoveWeb.Plugs.SetLocale
   end
 
@@ -38,6 +40,7 @@ defmodule MoveWeb.Router do
     get "/:side/add", InstanceController, :add
     get "/:side/edit", InstanceController, :edit
     post "/:side", InstanceController, :update
+    post "/instances", InstanceController, :create
   end
 
   # Enables LiveDashboard only for development

@@ -69,7 +69,7 @@
 
 <footer>
   <%= if @source && @target && !@error do %>
-    <%= form_tag(Routes.instance_path(@conn, :create), method: "POST") do %>
+    <%= form_tag(Routes.instance_path(@conn, :create, @locale), method: "POST") do %>
       <%= if @source.token do %>
         <input type="hidden" name="token" value="<%= @source.token %>" >
         <input type="hidden" name="client_id" value="<%= @source.client_id %>" >

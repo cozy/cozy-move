@@ -38,7 +38,7 @@ defmodule MoveWeb.Models.Stack do
     end
   end
 
-  defp move_url, do: Application.get_env(:move, __MODULE__, [])
+  defp move_url, do: Application.get_env(:move, __MODULE__, [])[:url]
 
   defp post_register(base_url, side) do
     headers = [{"accept", "application/json"}]
