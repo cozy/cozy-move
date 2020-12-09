@@ -65,7 +65,7 @@ defmodule MoveWeb.Models.Instance do
 
   def new_state do
     :crypto.strong_rand_bytes(@state_length)
-    |> Base.encode64(padding: false)
+    |> Base.url_encode64(padding: false)
     |> binary_part(0, @state_length)
   end
 end
