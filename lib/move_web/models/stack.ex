@@ -61,6 +61,7 @@ defmodule MoveWeb.Models.Stack do
     headers = [{"accept", "application/json"}]
 
     body = %{
+      "grant_type" => "authorization_code",
       "code" => instance.code,
       "client_id" => instance.client_id,
       "client_secret" => instance.client_secret
@@ -68,7 +69,7 @@ defmodule MoveWeb.Models.Stack do
 
     instance.url
     |> client(encode: :form)
-    |> Tesla.post("/move/access_token", body, headers: headers)
+    |> Tesla.post("/auth/access_token", body, headers: headers)
   end
 
   defp client(base_url, encode: :json), do: client(base_url, Tesla.Middleware.EncodeJson)
