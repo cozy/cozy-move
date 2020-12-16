@@ -67,12 +67,15 @@ defmodule Move.MixProject do
     [
       compile_assets: ["cmd npm run deploy --prefix assets", "phx.digest"],
       pretty: ["cmd cd assets && prettier --write --no-semi js/*.js js/*.jsx css/*.css"],
+      remove_screenshots: ["cmd rm -rf test/screenshots/actual"],
       setup: ["deps.get", "cmd npm install --prefix assets"],
       teardown: [
         "deps.clean --all",
+        "remove_screenshots",
         "cmd rm -rf _build assets/node_modules",
         "cmd which dh_clean > /dev/null && dh_clean || true"
-      ]
+      ],
+      test: ["remove_screenshots", "test"]
     ]
   end
 end
