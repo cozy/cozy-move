@@ -16,7 +16,7 @@
       <input type="text" name="url" id="cozy-url" />
     </div>
     <%= if @error do %><p class="u-error">
-      <%= gettext "This address doesn’t seem to be a cozy. Please check the address you provide." %>
+      <%= gettext "This address doesn’t seem to be a cozy. Please check the address you have provided." %>
     </p><% end %>
     <p>
       <a href="https://manager.cozycloud.cc/cozy/reminder?lang=<%= @locale %>" class="u-link">

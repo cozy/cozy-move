@@ -40,7 +40,7 @@ msgid "Enter your Cozy address"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:88
-msgid "Erase the data"
+msgid "Overwrite the data"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:6
@@ -111,7 +111,7 @@ msgid "Sorry, you cannot choose the same Cozy twice!"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:90
-#: lib/move_web/templates/instance/index.html.eex:94
+#: lib/move_web/templates/instance/index.html.eex:96
 msgid "Start the move!"
 msgstr ""
 
@@ -119,16 +119,12 @@ msgstr ""
 msgid "Switch"
 msgstr ""
 
-#: lib/move_web/templates/instance/index.html.eex:87
-msgid "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?"
-msgstr ""
-
 #: lib/move_web/templates/instance/index.html.eex:58
 msgid "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB."
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:19
-msgid "This address doesn’t seem to be a cozy. Please check the address you provide."
+msgid "This address doesn’t seem to be a cozy. Please check the address you have provided."
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:25
@@ -144,7 +140,7 @@ msgid "You cannot access your both Cozy during this export phase. It may take se
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:5
-msgid "You will not allowed to access your old and new Cozy during this moving phase. This can take several hours."
+msgid "You will not be allowed to access your old and new Cozy during this moving phase. This can take several hours."
 msgstr ""
 
 #: lib/move_web/templates/layout/app.html.eex:13
@@ -158,4 +154,13 @@ msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:14
 msgid "other"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:15
+#: lib/move_web/templates/instance/select.html.eex:8
+msgid "I already have a Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/index.html.eex:87
+msgid "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
 msgstr ""

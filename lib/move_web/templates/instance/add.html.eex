@@ -12,7 +12,7 @@
     </li>
     <li class="u-text">
       <%= gettext "Once you have created your Cozy, go back to the previous screen and click on \""
-      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have my new Cozy"
+      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have a Cozy"
       %></strong><%= gettext "\"" %>
     </li>
   </ol>

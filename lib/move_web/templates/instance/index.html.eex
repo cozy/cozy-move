@@ -84,8 +84,8 @@
       <input type="submit" class="c-btn"
         id="react-warning"
         data-title="<%= gettext "Warning" %>"
-        data-content="<%= gettext "The data on **_%{source}_** will be erased during the move. Your Cozy won't be available until the end of the operation.\n\nAre your sure?", source: @source.url %> "
-        data-confirm="<%= gettext "Erase the data" %>"
+        data-content="<%= gettext "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?", source: @source.url %> "
+        data-confirm="<%= gettext "Overwrite the data" %>"
         data-cancel="<%= gettext "Cancel" %>"
         name="<%= gettext "Start the move!" %>">
     </footer>
