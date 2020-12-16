@@ -50,8 +50,9 @@ defmodule Move.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:castore, "~> 0.1"},
       {:mint, "~> 1.0"},
-      {:tesla, "~> 1.4"},
+      {:tesla, "~> 1.3"},
       {:number, "~> 1.0"},
+      {:wallaby, "~> 0.28", runtime: false, only: :test},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
