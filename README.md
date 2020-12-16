@@ -41,6 +41,10 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 You can run tests with `mix test`. It requires `chromedriver`, which can be
 installed on Ubuntu with `sudo apt install chromium-chromedriver`.
 
+Running the tests will create screenshots in the `test/screenshots/actual`
+directory. They can be compared to a version stored in
+`test/screenshots/expected` with the script `test/screenshots/compare.sh`.
+
 ## Building release
 
 To build a release including Erlang Real-Time Sytem ready to be deployed on a

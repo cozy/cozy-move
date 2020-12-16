@@ -21,7 +21,7 @@ jobs:
           elixir-version: '1.11.x'
       - name: Checkout code
         uses: actions/checkout@v1
-      - name: Install Dependencies
+      - name: Download dependencies
         run: mix setup
       - name: Recover build cache
         uses: actions/cache@v1
@@ -38,3 +38,5 @@ jobs:
         run: mix compile_assets
       - name: Run feature tests
         run: mix test --trace
+      - name: Compare screenshots
+        run: ./test/screenshots/compare.sh
