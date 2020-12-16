@@ -23,6 +23,11 @@ jobs:
         uses: actions/checkout@v1
       - name: Install Dependencies
         run: mix setup
+      - name: Recover build cache
+        uses: actions/cache@v1
+        with:
+          path: _build
+          key: build-${{ runner.OS }}
       - name: Compile dependencies
         run: mix deps.compile
       - name: Check Formatting
