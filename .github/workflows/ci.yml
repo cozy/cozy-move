@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+env:
+  MIX_ENV: test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          otp-version: '23.x'
+          elixir-version: '1.11.x'
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Install Dependencies
+        run: mix setup
+      - name: Compile dependencies
+        run: mix deps.compile
+      - name: Check Formatting
+        run: mix format --check-formatted
+      - name: Lint
+        run: mix credo --strict
+      - name: Compile assets (needed for feature tests)
+        run: mix compile_assets
+      - name: Run feature tests
+        run: mix test --trace
