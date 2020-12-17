@@ -44,6 +44,13 @@
   border-bottom: 1px solid var(--silver);
 }
 
+/* Fix a bug where text is not centered in Chrome */
+footer input.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Layout */
 main {
   --navUnit: 4rem;
