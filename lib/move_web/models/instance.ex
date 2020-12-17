@@ -68,4 +68,18 @@ defmodule MoveWeb.Models.Instance do
     |> Base.url_encode64(padding: false)
     |> binary_part(0, @state_length)
   end
+
+  def fake(params) do
+    url =
+      if params["side"] == "source",
+        do: "http://source.cozy.tools/",
+        else: "http://target.cozy.tools/"
+
+    %Instance{
+      url: url,
+      disk: params["disk"] || "123456789",
+      quota: params["quota"] || "5000000000",
+      token: "xxx"
+    }
+  end
 end

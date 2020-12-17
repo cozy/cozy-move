@@ -15,6 +15,11 @@ defmodule MoveWeb.FeatureCase do
         {:ok, desktop} = Wallaby.start_session(window_size: [width: 1280, height: 720])
         fun.(desktop, "desktop")
       end
+
+      def sleep(session, ms) do
+        Process.sleep(ms)
+        session
+      end
     end
   end
 end

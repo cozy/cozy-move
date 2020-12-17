@@ -7,5 +7,5 @@ BIN="$(realpath "$WORK_DIR/../../assets/node_modules/.bin/pixelmatch")"
 for img in "$WORK_DIR"/actual/*.png
 do
 	echo "Comparing $img..."
-	"$BIN" "$img" "${img/actual/expected}"
+	"$BIN" "$img" "${img/actual/expected}" '' 0.1
 done

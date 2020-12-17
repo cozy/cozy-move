@@ -11,6 +11,7 @@ defmodule MoveWeb.Router do
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: MoveWeb.Telemetry
+      get "/test/:side", MoveWeb.TestController, :fill_side
     end
   end
 
