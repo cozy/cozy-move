@@ -41,9 +41,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 You can run tests with `mix test`. It requires `chromedriver`, which can be
 installed on Ubuntu with `sudo apt install chromium-chromedriver`.
 
-Running the tests will create screenshots in the `test/screenshots/actual`
-directory. They can be compared to a version stored in
-`test/screenshots/expected` with the script `test/screenshots/compare.sh`.
+Running the tests will create screenshots in the `test/screenshots`
+directory. The CI will upload them to [Argos CI](https://www.argos-ci.com/)
+in order to compare them to a reference.
 
 ## Building release
 

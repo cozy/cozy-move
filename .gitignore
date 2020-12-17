@@ -38,7 +38,7 @@ env
 .env
 
 # Screenshots taken by the tests
-/test/screenshots/actual
+/test/screenshots
 
 # Debian packaging artefacts
 *.debhelper

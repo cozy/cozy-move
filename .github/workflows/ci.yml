@@ -47,5 +47,9 @@ jobs:
         run: mix compile_assets
       - name: Run feature tests
         run: mix test --trace
-      - name: Compare screenshots
-        run: ./test/screenshots/compare.sh
+      - name: Upload screenshots to Argos
+        run: ./assets/node_modules/.bin/argos upload test/screenshots
+        env:
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          ARGOS_BRANCH: ${{ github.ref }}
+          ARGOS_COMMIT: ${{ github.sha }}

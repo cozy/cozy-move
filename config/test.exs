@@ -16,6 +16,6 @@ config :move, MoveWeb.Router,
 
 config :wallaby, driver: Wallaby.Chrome
 
-config :wallaby, screenshot_dir: "test/screenshots/actual"
+config :wallaby, screenshot_dir: "test/screenshots"
 
 config :wallaby, screenshot_on_failure: true
