@@ -1,0 +1,55 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+env:
+  MIX_ENV: test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          otp-version: '23.x'
+          elixir-version: '1.11.x'
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Download dependencies
+        run: mix setup
+      - name: Cache mix dependencies
+        uses: actions/cache@v2
+        with:
+          path: deps
+          key: ${{ runner.os }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+      - name: Cache _build
+        uses: actions/cache@v1
+        with:
+          path: _build
+          key: ${{ runner.os }}-build-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+      - name: Compile dependencies
+        run: mix deps.compile
+      - name: Check Formatting
+        run: mix format --check-formatted
+      - name: Lint
+        run: mix credo --strict
+      - name: Compile assets (needed for feature tests)
+        run: mix compile_assets
+      - name: Run feature tests
+        run: mix test --trace
+      - name: Upload screenshots to Argos
+        run: ./assets/node_modules/.bin/argos upload test/screenshots
+        env:
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          ARGOS_BRANCH: ${{ github.ref }}
+          ARGOS_COMMIT: ${{ github.sha }}

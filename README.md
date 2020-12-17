@@ -36,6 +36,15 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+## Test
+
+You can run tests with `mix test`. It requires `chromedriver`, which can be
+installed on Ubuntu with `sudo apt install chromium-chromedriver`.
+
+Running the tests will create screenshots in the `test/screenshots`
+directory. The CI will upload them to [Argos CI](https://www.argos-ci.com/)
+in order to compare them to a reference.
+
 ## Building release
 
 To build a release including Erlang Real-Time Sytem ready to be deployed on a

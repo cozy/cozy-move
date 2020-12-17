@@ -50,8 +50,9 @@ defmodule Move.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:castore, "~> 0.1"},
       {:mint, "~> 1.0"},
-      {:tesla, "~> 1.4"},
+      {:tesla, "~> 1.3"},
       {:number, "~> 1.0"},
+      {:wallaby, "~> 0.28", runtime: false, only: :test},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
@@ -66,12 +67,15 @@ defmodule Move.MixProject do
     [
       compile_assets: ["cmd npm run deploy --prefix assets", "phx.digest"],
       pretty: ["cmd cd assets && prettier --write --no-semi js/*.js js/*.jsx css/*.css"],
+      remove_screenshots: ["cmd rm -rf test/screenshots"],
       setup: ["deps.get", "cmd npm install --prefix assets"],
       teardown: [
         "deps.clean --all",
+        "remove_screenshots",
         "cmd rm -rf _build assets/node_modules",
         "cmd which dh_clean > /dev/null && dh_clean || true"
-      ]
+      ],
+      test: ["remove_screenshots", "test"]
     ]
   end
 end

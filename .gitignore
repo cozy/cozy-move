@@ -37,6 +37,9 @@ npm-debug.log
 env
 .env
 
+# Screenshots taken by the tests
+/test/screenshots
+
 # Debian packaging artefacts
 *.debhelper
 debian/changelog
