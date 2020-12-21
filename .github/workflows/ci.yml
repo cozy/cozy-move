@@ -21,8 +21,6 @@ jobs:
           elixir-version: '1.11.x'
       - name: Checkout code
         uses: actions/checkout@v1
-      - name: Download dependencies
-        run: mix setup
       - name: Cache mix dependencies
         uses: actions/cache@v2
         with:
@@ -37,6 +35,8 @@ jobs:
           key: ${{ runner.os }}-build-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
           restore-keys: |
             ${{ runner.os }}-build-
+      - name: Download dependencies
+        run: mix setup
       - name: Compile dependencies
         run: mix deps.compile
       - name: Check Formatting
