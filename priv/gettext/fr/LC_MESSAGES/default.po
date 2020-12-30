@@ -135,7 +135,7 @@ msgid "Switch"
 msgstr "Inverser"
 
 #: lib/move_web/templates/instance/index.html.eex:58
-msgid "The storage space of your Cozy is insufficient to move all your data. Your news Cozy %{target} has only %{quota} GB."
+msgid "The storage space of your Cozy is insufficient to move all your data. Your new Cozy %{target} has only %{quota} GB."
 msgstr "L'espace de stockage de votre Cozy est insuffisant pour déménager l'ensemble de vos données. En effet, votre nouveau cozy %{target} ne dispose que de %{quota} GO d'espace disque."
 
 #: lib/move_web/templates/instance/edit.html.eex:19
