@@ -63,7 +63,7 @@
   <% end %>
 
   <p class="u-text u-fz-small u-mb-0 u-mt-1-half">
-    <%= gettext "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
+    <%= gettext "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
   </p>
 </section>
 
