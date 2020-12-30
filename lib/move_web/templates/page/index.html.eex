@@ -2,7 +2,7 @@
   <img class="u-w-auto" src="<%= Routes.static_path(@conn, "/images/truck.svg") %>" alt=""/>
   <h1 class="u-title-h1 u-mt-1 u-ta-center"><%= gettext "Move my Cozy" %></h1>
   <p class="u-text u-w-100 u-mb-0"><%= gettext "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice." %></p>
-  <p class="u-text u-w-100 u-mb-0"><%= gettext "You will not be allowed to access your old and new Cozy during this moving phase. This can take several hours." %></p>
+  <p class="u-text u-w-100 u-mb-0"><%= gettext "You will not be allowed to access either your old or new Cozy during this moving phase. This can take several hours." %></p>
   <p class="u-text u-w-100 u-mb-0"><%= gettext "Once the transfer is completed, your old Cozy will be deleted." %></p>
 </section>
 

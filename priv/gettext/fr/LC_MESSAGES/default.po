@@ -151,14 +151,14 @@ msgid "Warning"
 msgstr "Attention"
 
 #: lib/move_web/templates/instance/index.html.eex:66
-msgid "You cannot access your both Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgid "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
 msgstr ""
 "Les ancien et nouveau Cozy seront inaccessibles durant cette phase d'export."
 " Cela pourra prendre plusieurs heures. Ne vous inquiétez pas : vous serez "
 "prévenu une fois l'export terminé."
 
 #: lib/move_web/templates/page/index.html.eex:5
-msgid "You will not be allowed to access your old and new Cozy during this moving phase. This can take several hours."
+msgid "You will not be allowed to access either your old or new Cozy during this moving phase. This can take several hours."
 msgstr ""
 "Vos ancien et nouveau Cozy seront inaccessibles durant cette phase de "
 "déménagement. Cela pourra durer plusieurs heures."
