@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= gettext "Move my Cozy" %></title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="icon" href="<%= Routes.static_path(@conn, "/icons/icon.svg") %>" type="image/svg+xml" sizes="any"/>
+    <link rel="apple-touch-icon" href="<%= Routes.static_path(@conn, "/icons/apple-touch-icon.png") %>"/>
+    <link rel="manifest" href="/icons/manifest.webmanifest">
   </head>
   <body>
     <main role="main" <%= if !@back do %>class="cover-page"<% end %>>
