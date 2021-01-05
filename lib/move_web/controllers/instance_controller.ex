@@ -80,10 +80,7 @@ defmodule MoveWeb.InstanceController do
   end
 
   def append_slash(url) do
-    cond do
-      String.ends_with?(url, "/") -> url
-      true -> url <> "/"
-    end
+    if String.ends_with?(url, "/"), do: url, else: url <> "/"
   end
 
   defp pre_redirect(instance, "source") do
