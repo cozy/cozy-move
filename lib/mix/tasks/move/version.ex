@@ -5,7 +5,7 @@ defmodule Mix.Tasks.Move.Version do
 
   use Mix.Task
 
-  @version Mix.Project.config[:version]
+  @version Mix.Project.config()[:version]
 
   def run(_) do
     IO.puts(@version)

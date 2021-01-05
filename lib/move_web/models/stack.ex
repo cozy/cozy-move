@@ -6,7 +6,7 @@ defmodule MoveWeb.Models.Stack do
   use Tesla
   alias MoveWeb.Models.Instance
 
-  @version Mix.Project.config[:version]
+  @version Mix.Project.config()[:version]
 
   def redirect_uri(side), do: move_url() <> "callback/" <> side
 
