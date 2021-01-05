@@ -6,6 +6,8 @@ defmodule MoveWeb.Models.Stack do
   use Tesla
   alias MoveWeb.Models.Instance
 
+  @version Mix.Project.config[:version]
+
   def redirect_uri(side), do: move_url() <> "callback/" <> side
 
   def exists(instance) do
@@ -49,7 +51,7 @@ defmodule MoveWeb.Models.Stack do
       "client_uri" => move_url(),
       "redirect_uris" => [redirect_uri(side)],
       "software_id" => "github.com/cozy/cozy-move",
-      "software_version" => Mix.Project.config()[:version]
+      "software_version" => @version
     }
 
     base_url
