@@ -68,15 +68,21 @@ defmodule MoveWeb.InstanceController do
   defp back_for_edit(conn, locale, side), do: Routes.instance_path(conn, :select, locale, side)
 
   defp build_url(base, domain) do
+    build_base_url(base, domain) |> append_slash
+  end
+
+  defp build_base_url(base, domain) do
     cond do
-      String.starts_with?(base, "http") ->
-        base
+      String.starts_with?(base, "http") -> base
+      String.contains?(base, ".") -> "https://#{base}"
+      true -> "https://#{base}#{domain}"
+    end
+  end
 
-      String.contains?(base, ".") ->
-        "https://#{base}"
-
-      true ->
-        "https://#{base}#{domain}"
+  def append_slash(url) do
+    cond do
+      String.ends_with?(url, "/") -> url
+      true -> url <> "/"
     end
   end
 
