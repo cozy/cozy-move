@@ -26,6 +26,6 @@
   </section>
 
   <footer>
-    <input type="submit" class="c-btn u-m-0" name="Continuer" />
+    <input type="submit" class="c-btn u-m-0" name="<%= gettext "Continue" %>" />
   </footer>
 <% end %>
