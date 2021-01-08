@@ -62,4 +62,4 @@ config :move, MoveWeb.Models.Stack, url: "https://move.cozycloud.cc/"
 # /!\ The CSP must be configured at compilation time
 config :move, MoveWeb.Router,
   csp:
-    "default-src 'none'; connect-src 'self'; img-src 'self' data: ; script-src 'self'; style-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'none';"
+    "default-src 'none'; connect-src 'self'; img-src 'self' data: ; script-src 'self'; style-src 'unsafe-inline' 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'none';"
