@@ -47,9 +47,14 @@ jobs:
         run: mix compile_assets
       - name: Run feature tests
         run: mix test --trace
+      - name: Extract branch name (push)
+        if: github.event_name == 'push'
+        run: echo "ARGOS_BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+      - name: Extract branch name (pull request)
+        if: github.event_name == 'pull_request'
+        run: echo "ARGOS_BRANCH=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
       - name: Upload screenshots to Argos
         run: ./assets/node_modules/.bin/argos upload test/screenshots
         env:
           ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
-          ARGOS_BRANCH: ${{ github.ref }}
           ARGOS_COMMIT: ${{ github.sha }}
