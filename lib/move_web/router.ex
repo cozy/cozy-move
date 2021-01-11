@@ -52,5 +52,6 @@ defmodule MoveWeb.Router do
     get "/:side/add", InstanceController, :add
     get "/:side/edit", InstanceController, :edit
     post "/:side", InstanceController, :update
+    get "/passwords", InstanceController, :passwords
   end
 end

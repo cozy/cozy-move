@@ -9,13 +9,22 @@ defmodule MoveWeb.InstanceController do
     source = get_session(conn, :source)
     target = get_session(conn, :target)
 
+    {method, action} =
+      if source && source.vault do
+        {:get, Routes.instance_path(conn, :passwords, locale)}
+      else
+        {:post, Routes.instance_path(conn, :create, locale)}
+      end
+
     assigns = %{
       locale: locale,
       back: Routes.page_path(conn, :index, locale),
       source: source,
       target: target,
       error: Instance.check_valid_move(source, target),
-      can_swap: Instance.can_swap(source, target)
+      can_swap: Instance.can_swap(source, target),
+      action: action,
+      method: method
     }
 
     render(conn, "index.html", assigns)
@@ -122,5 +131,19 @@ defmodule MoveWeb.InstanceController do
     |> clear_session()
     |> put_status(:temporary_redirect)
     |> redirect(external: url)
+  end
+
+  def passwords(conn, %{"locale" => locale}) do
+    source = get_session(conn, :source)
+    target = get_session(conn, :target)
+
+    assigns = %{
+      locale: locale,
+      back: Routes.instance_path(conn, :index, locale),
+      source: source,
+      target: target
+    }
+
+    render(conn, "passwords.html", assigns)
   end
 end

@@ -114,6 +114,10 @@ main form {
     width: calc(100vw - 2rem);
     margin: 1rem;
   }
+  /* Hack for the footer with two buttons */
+  footer.two_buttons {
+    margin-top: -0.5rem;
+  }
 }
 
 /* Desktop */
