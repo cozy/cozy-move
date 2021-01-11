@@ -30,8 +30,7 @@ msgstr ""
 "En déménageant votre Cozy, vous pourrez choisir de transférer toutes vos "
 "données vers une nouvelle adresse ou un nouvel hébergeur de votre choix."
 
-#: lib/move_web/templates/instance/index.html.eex:89
-#: lib/move_web/templates/instance/passwords.html.eex:89
+#: lib/move_web/templates/instance/index.html.eex:91
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -47,13 +46,11 @@ msgstr "Créer un Cozy"
 msgid "Enter your Cozy address"
 msgstr "Entrer l'adresse de votre Cozy"
 
-#: lib/move_web/templates/instance/index.html.eex:88
-#: lib/move_web/templates/instance/passwords.html.eex:88
+#: lib/move_web/templates/instance/index.html.eex:90
 msgid "Overwrite the data"
 msgstr "Écraser les données"
 
 #: lib/move_web/templates/instance/index.html.eex:6
-#: lib/move_web/templates/instance/passwords.html.eex:6
 msgid "Export from"
 msgstr "Exporter :"
 
@@ -75,8 +72,7 @@ msgstr ""
 "Cozy"
 
 #: lib/move_web/templates/instance/index.html.eex:15
-#: lib/move_web/templates/instance/index.html.eex:40 lib/move_web/templates/instance/passwords.html.eex:15
-#: lib/move_web/templates/instance/passwords.html.eex:40
+#: lib/move_web/templates/instance/index.html.eex:40
 msgid "GB"
 msgstr "Go"
 
@@ -97,7 +93,6 @@ msgid "I have not yet a Cozy"
 msgstr "Je n'ai pas encore créé mon nouveau Cozy"
 
 #: lib/move_web/templates/instance/index.html.eex:61
-#: lib/move_web/templates/instance/passwords.html.eex:61
 msgid "Increase the storage space of your new Cozy or delete the data not required and empty the trash."
 msgstr ""
 "Augmentez l'espace de stockage de votre Cozy ou supprimez des données de "
@@ -108,8 +103,7 @@ msgid "Let's move!"
 msgstr "C'est parti !"
 
 #: lib/move_web/templates/instance/index.html.eex:2
-#: lib/move_web/templates/instance/passwords.html.eex:2 lib/move_web/templates/layout/app.html.eex:7
-#: lib/move_web/templates/page/index.html.eex:3
+#: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
 msgid "Move my Cozy"
 msgstr "Déménager mon Cozy"
 
@@ -123,29 +117,24 @@ msgstr ""
 "Une fois votre Cozy créé, revenez à l'écran précédent et cliquez sur « "
 
 #: lib/move_web/templates/instance/index.html.eex:20
-#: lib/move_web/templates/instance/index.html.eex:46 lib/move_web/templates/instance/passwords.html.eex:20
-#: lib/move_web/templates/instance/passwords.html.eex:46 lib/move_web/templates/instance/select.html.eex:2
+#: lib/move_web/templates/instance/index.html.eex:46 lib/move_web/templates/instance/select.html.eex:2
 msgid "Select a Cozy"
 msgstr "Sélectionner un Cozy"
 
 #: lib/move_web/templates/instance/index.html.eex:52
-#: lib/move_web/templates/instance/passwords.html.eex:52
 msgid "Sorry, you cannot choose the same Cozy twice!"
 msgstr "Désolé, le même Cozy ne peut pas être choisi deux fois !"
 
-#: lib/move_web/templates/instance/index.html.eex:90
-#: lib/move_web/templates/instance/index.html.eex:96 lib/move_web/templates/instance/passwords.html.eex:90
-#: lib/move_web/templates/instance/passwords.html.eex:96
+#: lib/move_web/templates/instance/index.html.eex:92
+#: lib/move_web/templates/instance/index.html.eex:98
 msgid "Start the move!"
 msgstr "Lancer le déménagement"
 
 #: lib/move_web/templates/instance/index.html.eex:28
-#: lib/move_web/templates/instance/passwords.html.eex:28
 msgid "Switch"
 msgstr "Inverser"
 
 #: lib/move_web/templates/instance/index.html.eex:58
-#: lib/move_web/templates/instance/passwords.html.eex:58
 msgid "The storage space of your Cozy is insufficient to move all your data. Your new Cozy %{target} has only %{quota} GB."
 msgstr "L'espace de stockage de votre Cozy est insuffisant pour déménager l'ensemble de vos données. En effet, votre nouveau cozy %{target} ne dispose que de %{quota} GO d'espace disque."
 
@@ -154,17 +143,14 @@ msgid "This address doesn’t seem to be a cozy. Please check the address you ha
 msgstr "Cette adresse ne semble pas correspondre à un Cozy. Veuillez vérifier l'adresse que vous avez fournie."
 
 #: lib/move_web/templates/instance/index.html.eex:25
-#: lib/move_web/templates/instance/passwords.html.eex:25
 msgid "To"
 msgstr "Vers :"
 
-#: lib/move_web/templates/instance/index.html.eex:86
-#: lib/move_web/templates/instance/passwords.html.eex:86
+#: lib/move_web/templates/instance/index.html.eex:88
 msgid "Warning"
 msgstr "Attention"
 
 #: lib/move_web/templates/instance/index.html.eex:66
-#: lib/move_web/templates/instance/passwords.html.eex:66
 msgid "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
 msgstr ""
 "Les ancien et nouveau Cozy seront inaccessibles durant cette phase d'export."
@@ -182,8 +168,7 @@ msgid "back"
 msgstr "retour"
 
 #: lib/move_web/templates/instance/index.html.eex:10
-#: lib/move_web/templates/instance/index.html.eex:35 lib/move_web/templates/instance/passwords.html.eex:10
-#: lib/move_web/templates/instance/passwords.html.eex:35
+#: lib/move_web/templates/instance/index.html.eex:35
 msgid "edit"
 msgstr "modifier"
 
@@ -196,11 +181,54 @@ msgstr "autre"
 msgid "I already have a Cozy"
 msgstr "J'ai déjà un Cozy"
 
-#: lib/move_web/templates/instance/index.html.eex:87
-#: lib/move_web/templates/instance/passwords.html.eex:87
+#: lib/move_web/templates/instance/index.html.eex:89
 msgid "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
 msgstr "Lors du déménagement, les données déjà présentes dans votre Cozy **_%{source}_** seront écrasées. Votre Cozy sera indisponible jusqu'à la fin de l'opération.\n\nVoulez-vous vraiment continuer ?"
 
 #: lib/move_web/templates/instance/edit.html.eex:29
 msgid "Continue"
 msgstr "Continuer"
+
+#: lib/move_web/templates/instance/passwords.html.eex:15
+msgid "\"Export Vault\""
+msgstr "« Exporter le coffre »"
+
+#: lib/move_web/templates/instance/passwords.html.eex:13
+msgid "\"Settings\""
+msgstr "« Paramètres »"
+
+#: lib/move_web/templates/instance/passwords.html.eex:19
+msgid "\"Submit\""
+msgstr "« Soumettre »"
+
+#: lib/move_web/templates/instance/passwords.html.eex:12
+msgid "Click on"
+msgstr "Cliquez sur"
+
+#: lib/move_web/templates/instance/passwords.html.eex:2
+msgid "Export your passwords"
+msgstr "Exporter vos mots de passe"
+
+#: lib/move_web/templates/instance/passwords.html.eex:37
+msgid "I have exported my passwords"
+msgstr "J'ai exporté mes mots de passe"
+
+#: lib/move_web/templates/instance/passwords.html.eex:9
+msgid "Open the Pass extension on your browser"
+msgstr "Ouvrez l'extension Cozy installée sur votre navigateur"
+
+#: lib/move_web/templates/instance/passwords.html.eex:6
+msgid "Please follow the next steps to export the passwords saved in your Cozy extension of your browser:"
+msgstr "Suivez les étapes ci-dessous pour exporter les mots de passe enregistrés dans votre extension Cozy sur votre navigateur :"
+
+#: lib/move_web/templates/instance/passwords.html.eex:18
+msgid "Fill your password and click on"
+msgstr "Renseignez votre mot de passe et cliquez sur"
+
+#: lib/move_web/templates/instance/passwords.html.eex:38
+msgid "Skip this step"
+msgstr "Ignorer cette étape"
+
+#: lib/move_web/templates/instance/passwords.html.eex:14
+msgid "and then click on"
+msgstr "en bas puis sur"

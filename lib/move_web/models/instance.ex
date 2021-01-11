@@ -11,11 +11,12 @@ defmodule MoveWeb.Models.Instance do
 
   # A URL is formatted like https://source.cozy.example/
   # Disk and quota are numbers (in bytes) but can be nil.
+  # Vault is a boolean to indicate if the user has a vault to move.
   # A code can only be used with a mail confirmation (on the source thus).
   # A token has permission for both exporting and importing.
   # State, client_id, and client_secret are used to exchange secrets between
   # move and the stack.
-  defstruct [:url, :disk, :quota, :code, :token, :state, :client_id, :client_secret]
+  defstruct [:url, :disk, :quota, :vault, :code, :token, :state, :client_id, :client_secret]
 
   def check_valid_move(source, target) do
     cond do
@@ -51,6 +52,7 @@ defmodule MoveWeb.Models.Instance do
         code: params["code"],
         disk: params["used"],
         quota: params["quota"],
+        vault: params["vault"] == "true",
         state: new_state()
     }
   end
@@ -79,6 +81,7 @@ defmodule MoveWeb.Models.Instance do
       url: url,
       disk: params["disk"] || "123456789",
       quota: params["quota"] || "5000000000",
+      vault: params["vault"] == "true",
       token: "xxx"
     }
   end
