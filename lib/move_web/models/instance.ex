@@ -37,7 +37,9 @@ defmodule MoveWeb.Models.Instance do
   # Unknown disk usage may happen and should not block
   def quota_error(%Instance{disk: nil}, _target), do: false
   def quota_error(_source, %Instance{quota: nil}), do: false
-  def quota_error(%Instance{disk: taken}, %Instance{quota: available}), do: taken > available
+
+  def quota_error(%Instance{disk: taken}, %Instance{quota: available}),
+    do: String.to_integer(taken) > String.to_integer(available)
 
   def can_swap(nil, nil), do: false
   def can_swap(nil, _target), do: true
