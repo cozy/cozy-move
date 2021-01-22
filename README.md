@@ -15,16 +15,6 @@ hardware where no one profiles you.
 Cozy-Move is a wizard that helps cozy users to move their Cozy from one place/hoster
 to another.
 
-## Workflows
-
-### Starting from settings
-
-![Starting from settings](./docs/from-settings.png)
-
-### Starting from cozy-move
-
-![Starting from cozy-move](./docs/from-cozy-move.png)
-
 ## Dev
 
 To start your Phoenix server:
