@@ -89,7 +89,8 @@
         data-content="<%= gettext "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?", source: @source.url %> "
         data-confirm="<%= gettext "Overwrite the data" %>"
         data-cancel="<%= gettext "Cancel" %>"
-        name="<%= gettext "Start the move!" %>">
+        name="<%= gettext "Start the move!" %>"
+        value="<%= gettext "Start the move!" %>">
     </footer>
   <% end %>
 <% else %>
