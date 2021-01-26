@@ -77,7 +77,10 @@ defmodule MoveWeb.InstanceController do
   defp back_for_edit(conn, locale, side), do: Routes.instance_path(conn, :select, locale, side)
 
   defp build_url(base, domain) do
-    build_base_url(base, domain) |> append_slash
+    base
+    |> String.trim()
+    |> build_base_url(domain)
+    |> append_slash
   end
 
   defp build_base_url(base, domain) do
