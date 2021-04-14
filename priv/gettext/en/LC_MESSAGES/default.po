@@ -11,7 +11,7 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2\n"
 
-#: lib/move_web/templates/instance/add.html.eex:16
+#: lib/move_web/templates/instance/add.html.eex:17
 msgid "\""
 msgstr ""
 
@@ -25,10 +25,6 @@ msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:91
 msgid "Cancel"
-msgstr ""
-
-#: lib/move_web/templates/instance/add.html.eex:10
-msgid "Click here to create your new Cozy"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:2
@@ -64,14 +60,6 @@ msgstr ""
 msgid "GB"
 msgstr ""
 
-#: lib/move_web/templates/instance/add.html.eex:15
-msgid "I already have my new Cozy"
-msgstr ""
-
-#: lib/move_web/templates/instance/select.html.eex:8
-msgid "I have already a Cozy"
-msgstr ""
-
 #: lib/move_web/templates/instance/edit.html.eex:23
 msgid "I have forgotten the address of my Cozy"
 msgstr ""
@@ -97,7 +85,7 @@ msgstr ""
 msgid "Once the transfer is completed, your old Cozy will be deleted."
 msgstr ""
 
-#: lib/move_web/templates/instance/add.html.eex:14
+#: lib/move_web/templates/instance/add.html.eex:15
 msgid "Once you have created your Cozy, go back to the previous screen and click on \""
 msgstr ""
 
@@ -111,7 +99,7 @@ msgid "Sorry, you cannot choose the same Cozy twice!"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:92
-#: lib/move_web/templates/instance/index.html.eex:98
+#: lib/move_web/templates/instance/index.html.eex:93 lib/move_web/templates/instance/index.html.eex:99
 msgid "Start the move!"
 msgstr ""
 
@@ -211,4 +199,17 @@ msgstr ""
 
 #: lib/move_web/templates/instance/passwords.html.eex:14
 msgid "and then click on"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:10
+msgid "Click here to create your new Cozy with Cozy Cloud"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:16
+#: lib/move_web/templates/instance/select.html.eex:8
+msgid "I already have a new Cozy"
+msgstr ""
+
+#: lib/move_web/templates/instance/add.html.eex:12
+msgid "or go to the homepage of your new host"
 msgstr ""

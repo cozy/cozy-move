@@ -6,13 +6,14 @@
   <h2 class="u-title-h4 u-mb-1"><%= gettext "Follow the following steps to move to a new Cozy" %></h2>
   <ol class="u-w-auto u-bg-paleGrey u-bdrs-4 u-stack-m u-pv-1 u-pr-1">
     <li class="u-text">
-      <a href="https://manager.cozycloud.cc/cozy/create?lang=<%= @locale %>" class="u-link u-charcoalGrey">
-        <%= gettext "Click here to create your new Cozy" %>
+      <a href="https://manager.cozycloud.cc/cozy/create?lang=<%= @locale %>" class="u-link">
+        <%= gettext "Click here to create your new Cozy with Cozy Cloud" %>
       </a>
+      <%= gettext "or go to the homepage of your new host" %>
     </li>
     <li class="u-text">
       <%= gettext "Once you have created your Cozy, go back to the previous screen and click on \""
-      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have a Cozy"
+      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have a new Cozy"
       %></strong><%= gettext "\"" %>
     </li>
   </ol>
