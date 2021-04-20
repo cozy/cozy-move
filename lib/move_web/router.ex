@@ -30,10 +30,15 @@ defmodule MoveWeb.Router do
   end
 
   pipeline :browser do
+    headers = %{
+      "content-security-policy" => @csp,
+      "permissions-policy" => "interest-cohort=()"
+    }
+
     plug :accepts, ["html"]
     plug :fetch_session
     plug :protect_from_forgery
-    plug :put_secure_browser_headers, %{"content-security-policy" => @csp}
+    plug :put_secure_browser_headers, headers
     plug MoveWeb.Plugs.SetLocale
   end
 
