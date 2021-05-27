@@ -20,7 +20,7 @@ jobs:
           otp-version: '23.x'
           elixir-version: '1.11.x'
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Cache mix dependencies
         uses: actions/cache@v2
         with:
