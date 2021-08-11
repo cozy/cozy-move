@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ReactMarkdown from "react-markdown"
 import snarkdown from "snarkdown"
 import useBreakpoints from "cozy-ui/transpiled/react/hooks/useBreakpoints"
 import { ConfirmDialog } from "cozy-ui/transpiled/react/CozyDialogs"
