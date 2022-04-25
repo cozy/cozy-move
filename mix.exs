@@ -45,7 +45,7 @@ defmodule Move.MixProject do
       {:phoenix_live_dashboard, "~> 0.4.0"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 0.5"},
-      {:gettext, "~> 0.18"},
+      {:gettext, "~> 0.19"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:castore, "~> 0.1"},
