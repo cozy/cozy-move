@@ -170,8 +170,8 @@ msgid "I already have a Cozy"
 msgstr "J'ai déjà un Cozy"
 
 #: lib/move_web/templates/instance/index.html.eex:89
-msgid "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
-msgstr "Lors du déménagement, les données déjà présentes dans votre Cozy **_%{source}_** seront écrasées. Votre Cozy sera indisponible jusqu'à la fin de l'opération.\n\nVoulez-vous vraiment continuer ?"
+msgid "When moving, the data already present in your Cozy **_%{target}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
+msgstr "Lors du déménagement, les données déjà présentes dans votre Cozy **_%{target}_** seront écrasées. Votre Cozy sera indisponible jusqu'à la fin de l'opération.\n\nVoulez-vous vraiment continuer ?"
 
 #: lib/move_web/templates/instance/edit.html.eex:29
 msgid "Continue"

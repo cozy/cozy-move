@@ -86,7 +86,7 @@
       <input type="submit" class="c-btn"
         id="react-warning"
         data-title="<%= gettext "Warning" %>"
-        data-content="<%= gettext "When moving, the data already present in your Cozy **_%{source}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?", source: @source.url %> "
+        data-content="<%= gettext "When moving, the data already present in your Cozy **_%{target}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?", target: @target.url %> "
         data-confirm="<%= gettext "Overwrite the data" %>"
         data-cancel="<%= gettext "Cancel" %>"
         name="<%= gettext "Start the move!" %>"
