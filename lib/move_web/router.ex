@@ -30,10 +30,7 @@ defmodule MoveWeb.Router do
   end
 
   pipeline :browser do
-    headers = %{
-      "content-security-policy" => @csp,
-      "permissions-policy" => "interest-cohort=()"
-    }
+    headers = %{"content-security-policy" => @csp}
 
     plug :accepts, ["html"]
     plug :fetch_session
