@@ -52,7 +52,7 @@ defmodule Move.MixProject do
       {:mint, "~> 1.0"},
       {:tesla, "~> 1.4", override: true},
       {:number, "~> 1.0"},
-      {:wallaby, "~> 0.29", runtime: false, only: :test},
+      {:wallaby, "~> 0.30", runtime: false, only: :test},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
