@@ -17,8 +17,8 @@ jobs:
       - name: Install Elixir
         uses: erlef/setup-beam@v1
         with:
-          otp-version: '23.x'
-          elixir-version: '1.11.x'
+          otp-version: '25.x'
+          elixir-version: '1.13.x'
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Cache mix dependencies
