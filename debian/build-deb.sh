@@ -11,12 +11,13 @@ cd "${PROJECT_DIR}"
 PACKAGE_NAME="cozy-move"
 TODAY=$(date +%Y%m%d%H%M%S)
 EPOCH=""
+export DEBEMAIL="${DEBEMAIL:-admin@cozycloud.cc}"
 
 # Get root privilege
 if [ "$(id -u)" = 0 ]; then
-    SUDO=env
+    SUDO="env"
 else
-    SUDO=sudo
+    SUDO="sudo"
 fi
 
 cleanup() {
@@ -26,7 +27,7 @@ cleanup() {
 getpackage(){
   echo "Swithing to branch ${BRANCH}"
   try git fetch
-  try git checkout ${BRANCH}
+  try git checkout "${BRANCH}"
 }
 
 info(){
@@ -164,9 +165,9 @@ fi
 # make sure we have nodejs
 if ! which nodejs 1>/dev/null; then
     echo "Missing nodejs, marking for installation"
-    try ${SUDO} apt-get -y install nodejs=14* --no-install-recommends
+    try ${SUDO} apt-get -y install nodejs=20* --no-install-recommends
 else
-    nodejs --version | grep -q -E '^v14\.' || die "Wrong nodejs version"
+    nodejs --version | grep -q -E '^v20\.' || die "Wrong nodejs version"
 fi
 
 # Get Package (switch git branch if needed)
