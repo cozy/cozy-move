@@ -3,8 +3,8 @@
   "description": " ",
   "license": "MIT",
   "scripts": {
-    "deploy": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "deploy": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
+    "watch": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode development --watch"
   },
   "dependencies": {
     "@babel/preset-react": "7.12.7",
