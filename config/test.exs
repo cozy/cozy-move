@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :move, MoveWeb.Endpoint,
   http: [port: 4002],
