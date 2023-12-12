@@ -6,9 +6,8 @@ Uploaders: Cozycloud <contact@cozycloud.cc>
 Homepage: https://cozy.io
 Standards-Version: 3.9.4
 Vcs-Git: https://github.com/cozy/cozy-move.git
-Build-Depends: debhelper (>= 9), dh-systemd,
-               esl-erlang (>= 1:23.1), elixir (>= 1.11),
-               nodejs (>= 14)
+Build-Depends: debhelper (>= 9), nodejs (>= 14),
+               esl-erlang (>= 1:26.0), elixir (>= 1.15)
 
 Package: cozy-move
 Architecture: amd64

@@ -2,7 +2,7 @@ defmodule MoveWeb.Router do
   use MoveWeb, :router
 
   # credo:disable-for-next-line
-  @csp Application.get_env(:move, __MODULE__, false)[:csp]
+  @csp Application.compile_env(:move, __MODULE__, false)[:csp]
 
   # Enables LiveDashboard only for development
   if Mix.env() in [:dev, :test] do
