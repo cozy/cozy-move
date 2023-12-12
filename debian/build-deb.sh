@@ -164,9 +164,9 @@ fi
 # make sure we have nodejs
 if ! which nodejs 1>/dev/null; then
     echo "Missing nodejs, marking for installation"
-    try ${SUDO} apt-get -y install nodejs=14* --no-install-recommends
+    try ${SUDO} apt-get -y install nodejs=18* --no-install-recommends
 else
-    nodejs --version | grep -q -E '^v14\.' || die "Wrong nodejs version"
+    nodejs --version | grep -q -E '^v18\.' || die "Wrong nodejs version"
 fi
 
 # Get Package (switch git branch if needed)
