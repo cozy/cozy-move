@@ -1,19 +1,19 @@
 <header>
-  <h1 class="u-title-h1"><%= gettext "Create a new Cozy" %></h1>
+  <h1 class="u-title-h1"><%= gettext "Create a new Twake" %></h1>
 </header>
 
 <section>
-  <h2 class="u-title-h4 u-mb-1"><%= gettext "Follow the following steps to move to a new Cozy" %></h2>
+  <h2 class="u-title-h4 u-mb-1"><%= gettext "Follow the following steps to move to a new Twake" %></h2>
   <ol class="u-w-auto u-bg-paleGrey u-bdrs-4 u-stack-m u-pv-1 u-pr-1">
     <li class="u-text">
       <a href="https://manager.cozycloud.cc/cozy/create?lang=<%= @locale %>" class="u-link">
-        <%= gettext "Click here to create your new Cozy with Cozy Cloud" %>
+        <%= gettext "Click here to create your new Twake with Twake Workplace" %>
       </a>
       <%= gettext "or go to the homepage of your new host" %>
     </li>
     <li class="u-text">
-      <%= gettext "Once you have created your Cozy, go back to the previous screen and click on \""
-      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have a new Cozy"
+      <%= gettext "Once you have created your Twake, go back to the previous screen and click on \""
+      %><strong class="u-fw-bold u-fs-italic"><%= gettext "I already have a new Twake"
       %></strong><%= gettext "\"" %>
     </li>
   </ol>

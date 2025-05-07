@@ -5,7 +5,7 @@ defmodule MoveWeb.Features.MovePageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/en/instances")
-      |> assert_has(Query.css("h1", text: "Move my Cozy"))
+      |> assert_has(Query.css("h1", text: "Move my Twake"))
       |> take_screenshot(name: "move_empty_#{suffix}")
     end)
   end

@@ -1,7 +1,7 @@
 defmodule MoveWeb.Features.PasswordsPageTest do
   use MoveWeb.FeatureCase, async: true
 
-  test "move my Cozy page can show the quota error" do
+  test "export passwords page can be displayed" do
     for_session(fn session, suffix ->
       session
       |> visit("/test/source?vault=true")

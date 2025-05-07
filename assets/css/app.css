@@ -43,6 +43,9 @@
 .u-bd-bottom {
   border-bottom: 1px solid var(--silver);
 }
+.u-bdrs-100 {
+  border-radius: 100px;
+}
 
 /* Fix a bug where text is not centered in Chrome */
 footer input.c-btn {
@@ -56,7 +59,7 @@ main {
   --navUnit: 4rem;
   display: grid;
   grid-template-columns: var(--navUnit) 1fr;
-  grid-template-rows: var(--navUnit) calc(2 * var(--navUnit)) 1fr 5rem;
+  grid-template-rows: var(--navUnit) auto 1fr 5rem;
 }
 main > *,
 main form > * {
@@ -92,6 +95,9 @@ main footer > .c-btn {
 main form {
   display: contents;
 }
+.u-title-h2 span {
+  color: #DBDBDB;
+}
 
 /* Mobile */
 @media (max-width: 30rem) {
@@ -103,11 +109,17 @@ main form {
     display: none;
   }
   main header {
-    justify-content: flex-start;
+    grid-area: 2 / 1 / 2 / 3;
   }
-  main > a,
+  main section {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+  main > a {
+    grid-area: 1 / 1 / 2 / 2;
+  }
   main header {
-    box-shadow: inset 0 -1px 0 0 var(--silver);
+    box-shadow: inset 0 1px 0 0 var(--silver);
+    padding-top: 20px;
   }
   main section:not(.u-m-0-s),
   main footer {
@@ -150,4 +162,17 @@ main form {
   main footer > .c-btn {
     margin-top: 2.5rem;
   }
+}
+
+.move-header {
+  display: grid;
+  justify-items: center;
+}
+
+.move-header img {
+  grid-row: 1;
+}
+
+.move-header h1 {
+  grid-row: 2;
 }
