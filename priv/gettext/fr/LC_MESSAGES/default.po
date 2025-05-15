@@ -21,13 +21,13 @@ msgid "\""
 msgstr " »"
 
 #: lib/move_web/templates/instance/edit.html.eex:15
-msgid "Address of my Cozy"
-msgstr "Adresse de mon Cozy"
+msgid "Address of my Twake"
+msgstr "Adresse de mon Twake"
 
 #: lib/move_web/templates/page/index.html.eex:4
-msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
+msgid "By moving your Twake, you can choose to transfer all your data to a new address or a new host of your choice."
 msgstr ""
-"En déménageant votre Cozy, vous pourrez choisir de transférer toutes vos "
+"En déménageant votre Twake, vous pourrez choisir de transférer toutes vos "
 "données vers une nouvelle adresse ou un nouvel hébergeur de votre choix."
 
 #: lib/move_web/templates/instance/index.html.eex:91
@@ -35,12 +35,12 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: lib/move_web/templates/instance/add.html.eex:2
-msgid "Create a new Cozy"
-msgstr "Créer un Cozy"
+msgid "Create a new Twake"
+msgstr "Créer un Twake"
 
 #: lib/move_web/templates/instance/edit.html.eex:3
-msgid "Enter your Cozy address"
-msgstr "Entrer l'adresse de votre Cozy"
+msgid "Enter your Twake address"
+msgstr "Entrer l'adresse de votre Twake"
 
 #: lib/move_web/templates/instance/index.html.eex:90
 msgid "Overwrite the data"
@@ -51,21 +51,21 @@ msgid "Export from"
 msgstr "Exporter :"
 
 #: lib/move_web/templates/instance/edit.html.eex:9
-msgid "Fill in the address of the Cozy from which you wish to export your data"
+msgid "Fill in the address of the Twake from which you wish to export your data"
 msgstr ""
-"Renseignez l'adresse du Cozy depuis lequel vous souhaitez exporter vos "
+"Renseignez l'adresse du Twake depuis lequel vous souhaitez exporter vos "
 "données"
 
 #: lib/move_web/templates/instance/edit.html.eex:11
-msgid "Fill in the address of the Cozy to which you wish to export your data"
+msgid "Fill in the address of the Twake to which you wish to export your data"
 msgstr ""
-"Renseignez l'adresse du Cozy vers lequel vous souhaitez exporter vos données"
+"Renseignez l'adresse du Twake vers lequel vous souhaitez exporter vos données"
 
 #: lib/move_web/templates/instance/add.html.eex:6
-msgid "Follow the following steps to move to a new Cozy"
+msgid "Follow the following steps to move to a new Twake"
 msgstr ""
 "Suivez les étapes suivantes pour déménager vos données vers votre nouveau "
-"Cozy"
+"Twake"
 
 #: lib/move_web/templates/instance/index.html.eex:15
 #: lib/move_web/templates/instance/index.html.eex:40
@@ -73,18 +73,18 @@ msgid "GB"
 msgstr "Go"
 
 #: lib/move_web/templates/instance/edit.html.eex:23
-msgid "I have forgotten the address of my Cozy"
-msgstr "J'ai oublié l'adresse de mon Cozy"
+msgid "I have forgotten the address of my Twake"
+msgstr "J'ai oublié l'adresse de mon Twake"
 
 #: lib/move_web/templates/instance/select.html.eex:12
-msgid "I have not yet a Cozy"
-msgstr "Je n'ai pas encore créé mon nouveau Cozy"
+msgid "I have not yet a Twake"
+msgstr "Je n'ai pas encore créé mon nouveau Twake"
 
 #: lib/move_web/templates/instance/index.html.eex:61
-msgid "Increase the storage space of your new Cozy or delete the data not required and empty the trash."
+msgid "Increase the storage space of your new Twake or delete the data not required and empty the trash."
 msgstr ""
-"Augmentez l'espace de stockage de votre Cozy ou supprimez des données de "
-"votre ancien Cozy et videz la corbeille."
+"Augmentez l'espace de stockage de votre Twake ou supprimez des données de "
+"votre ancien Twake et videz la corbeille."
 
 #: lib/move_web/templates/page/index.html.eex:11
 msgid "Let's move!"
@@ -92,26 +92,26 @@ msgstr "C'est parti !"
 
 #: lib/move_web/templates/instance/index.html.eex:2
 #: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
-msgid "Move my Cozy"
-msgstr "Déménager mon Cozy"
+msgid "Move my Twake"
+msgstr "Déménager mon Twake"
 
 #: lib/move_web/templates/page/index.html.eex:6
-msgid "Once the transfer is completed, your old Cozy will be deleted."
-msgstr "Une fois le transfert terminé, votre ancien Cozy sera supprimé."
+msgid "Once the transfer is completed, your old Twake will be deleted."
+msgstr "Une fois le transfert terminé, votre ancien Twake sera supprimé."
 
 #: lib/move_web/templates/instance/add.html.eex:15
-msgid "Once you have created your Cozy, go back to the previous screen and click on \""
+msgid "Once you have created your Twake, go back to the previous screen and click on \""
 msgstr ""
-"Une fois votre Cozy créé, revenez à l'écran précédent et cliquez sur « "
+"Une fois votre Twake créé, revenez à l'écran précédent et cliquez sur « "
 
 #: lib/move_web/templates/instance/index.html.eex:20
 #: lib/move_web/templates/instance/index.html.eex:46 lib/move_web/templates/instance/select.html.eex:2
-msgid "Select a Cozy"
-msgstr "Sélectionner un Cozy"
+msgid "Select a Twake"
+msgstr "Sélectionner un Twake"
 
 #: lib/move_web/templates/instance/index.html.eex:52
-msgid "Sorry, you cannot choose the same Cozy twice!"
-msgstr "Désolé, le même Cozy ne peut pas être choisi deux fois !"
+msgid "Sorry, you cannot choose the same Twake twice!"
+msgstr "Désolé, le même Twake ne peut pas être choisi deux fois !"
 
 #: lib/move_web/templates/instance/index.html.eex:92
 #: lib/move_web/templates/instance/index.html.eex:93 lib/move_web/templates/instance/index.html.eex:99
@@ -123,12 +123,12 @@ msgid "Switch"
 msgstr "Inverser"
 
 #: lib/move_web/templates/instance/index.html.eex:58
-msgid "The storage space of your Cozy is insufficient to move all your data. Your new Cozy %{target} has only %{quota} GB."
-msgstr "L'espace de stockage de votre Cozy est insuffisant pour déménager l'ensemble de vos données. En effet, votre nouveau cozy %{target} ne dispose que de %{quota} GO d'espace disque."
+msgid "The storage space of your Twake is insufficient to move all your data. Your new Twake %{target} has only %{quota} GB."
+msgstr "L'espace de stockage de votre Twake est insuffisant pour déménager l'ensemble de vos données. En effet, votre nouveau twake %{target} ne dispose que de %{quota} GO d'espace disque."
 
 #: lib/move_web/templates/instance/edit.html.eex:19
-msgid "This address doesn’t seem to be a cozy. Please check the address you have provided."
-msgstr "Cette adresse ne semble pas correspondre à un Cozy. Veuillez vérifier l'adresse que vous avez fournie."
+msgid "This address doesn't seem to be a twake. Please check the address you have provided."
+msgstr "Cette adresse ne semble pas correspondre à un Twake. Veuillez vérifier l'adresse que vous avez fournie."
 
 #: lib/move_web/templates/instance/index.html.eex:25
 msgid "To"
@@ -139,16 +139,16 @@ msgid "Warning"
 msgstr "Attention"
 
 #: lib/move_web/templates/instance/index.html.eex:66
-msgid "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgid "You cannot access either of your Twake during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
 msgstr ""
-"Les ancien et nouveau Cozy seront inaccessibles durant cette phase d'export."
+"Les ancien et nouveau Twake seront inaccessibles durant cette phase d'export."
 " Cela pourra prendre plusieurs heures. Ne vous inquiétez pas : vous serez "
 "prévenu une fois l'export terminé."
 
 #: lib/move_web/templates/page/index.html.eex:5
-msgid "You will not be allowed to access either your old or new Cozy during this moving phase. This can take several hours."
+msgid "You will not be allowed to access either your old or new Twake during this moving phase. This can take several hours."
 msgstr ""
-"Vos ancien et nouveau Cozy seront inaccessibles durant cette phase de "
+"Vos ancien et nouveau Twake seront inaccessibles durant cette phase de "
 "déménagement. Cela pourra durer plusieurs heures."
 
 #: lib/move_web/templates/layout/app.html.eex:17
@@ -166,12 +166,12 @@ msgstr "autre"
 
 #: lib/move_web/templates/instance/add.html.eex:15
 #: lib/move_web/templates/instance/select.html.eex:8
-msgid "I already have a Cozy"
-msgstr "J'ai déjà un Cozy"
+msgid "I already have a Twake"
+msgstr "J'ai déjà un Twake"
 
 #: lib/move_web/templates/instance/index.html.eex:89
-msgid "When moving, the data already present in your Cozy **_%{target}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
-msgstr "Lors du déménagement, les données déjà présentes dans votre Cozy **_%{target}_** seront écrasées. Votre Cozy sera indisponible jusqu'à la fin de l'opération.\n\nVoulez-vous vraiment continuer ?"
+msgid "When moving, the data already present in your Twake **_%{target}_** will be overwritten. Access to your Twake will be blocked until the end of this operation.\n\nDo you really want to continue?"
+msgstr "Lors du déménagement, les données déjà présentes dans votre Twake **_%{target}_** seront écrasées. Votre Twake sera indisponible jusqu'à la fin de l'opération.\n\nVoulez-vous vraiment continuer ?"
 
 #: lib/move_web/templates/instance/edit.html.eex:29
 msgid "Continue"
@@ -203,11 +203,11 @@ msgstr "J'ai exporté mes mots de passe"
 
 #: lib/move_web/templates/instance/passwords.html.eex:9
 msgid "Open the Pass extension on your browser"
-msgstr "Ouvrez l'extension Cozy installée sur votre navigateur"
+msgstr "Ouvrez l'extension Twake installée sur votre navigateur"
 
 #: lib/move_web/templates/instance/passwords.html.eex:6
-msgid "Please follow the next steps to export the passwords saved in your Cozy extension of your browser:"
-msgstr "Suivez les étapes ci-dessous pour exporter les mots de passe enregistrés dans votre extension Cozy sur votre navigateur :"
+msgid "Please follow the next steps to export the passwords saved in your Twake extension of your browser:"
+msgstr "Suivez les étapes ci-dessous pour exporter les mots de passe enregistrés dans votre extension Twake sur votre navigateur :"
 
 #: lib/move_web/templates/instance/passwords.html.eex:18
 msgid "Fill your password and click on"
@@ -222,13 +222,13 @@ msgid "and then click on"
 msgstr "en bas puis sur"
 
 #: lib/move_web/templates/instance/add.html.eex:10
-msgid "Click here to create your new Cozy with Cozy Cloud"
-msgstr "Cliquez ici pour créer votre nouveau Cozy avec Cozy Cloud"
+msgid "Click here to create your new Twake with Twake Workplace"
+msgstr "Cliquez ici pour créer votre nouveau Twake avec Twake Workplace"
 
 #: lib/move_web/templates/instance/add.html.eex:16
 #: lib/move_web/templates/instance/select.html.eex:8
-msgid "I already have a new Cozy"
-msgstr "J'ai déjà un nouveau Cozy"
+msgid "I already have a new Twake"
+msgstr "J'ai déjà un nouveau Twake"
 
 #: lib/move_web/templates/instance/add.html.eex:12
 msgid "or go to the homepage of your new host"

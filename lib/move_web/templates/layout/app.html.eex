@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><%= gettext "Move my Cozy" %></title>
+    <title><%= gettext "Move my Twake" %></title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <link rel="icon" href="/favicon.ico"/>
     <link rel="icon" href="<%= Routes.static_path(@conn, "/icons/icon.svg") %>" type="image/svg+xml" sizes="any"/>
@@ -18,8 +18,8 @@
       </a><% end %>
       <nav role="navigation">
         <div class="u-w-1px u-h-1-half u-bg-silver u-mr-1"></div>
-        <img class="u-mv-1 u-mh-half" src="<%= Routes.static_path(@conn, "/images/icon-home.svg") %>" alt="Cozy Cloud" />
-        <h2 class="u-title-h2">Cozy</h2>
+        <img class="u-mv-1 u-mh-half" src="<%= Routes.static_path(@conn, "/images/icon-home.svg") %>" alt="Twake Workplace" />
+        <h2 class="u-title-h2">Twake <span>Workplace</span></h2>
       </nav>
       <%= @inner_content %>
     </main>

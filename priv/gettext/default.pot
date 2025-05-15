@@ -15,11 +15,11 @@ msgid "\""
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:15
-msgid "Address of my Cozy"
+msgid "Address of my Twake"
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:4
-msgid "By moving your Cozy, you can choose to transfer all your data to a new address or a new host of your choice."
+msgid "By moving your Twake, you can choose to transfer all your data to a new address or a new host of your choice."
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:91
@@ -27,11 +27,11 @@ msgid "Cancel"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:2
-msgid "Create a new Cozy"
+msgid "Create a new Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:3
-msgid "Enter your Cozy address"
+msgid "Enter your Twake address"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:90
@@ -43,15 +43,15 @@ msgid "Export from"
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:9
-msgid "Fill in the address of the Cozy from which you wish to export your data"
+msgid "Fill in the address of the Twake from which you wish to export your data"
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:11
-msgid "Fill in the address of the Cozy to which you wish to export your data"
+msgid "Fill in the address of the Twake to which you wish to export your data"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:6
-msgid "Follow the following steps to move to a new Cozy"
+msgid "Follow the following steps to move to a new Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:15
@@ -60,15 +60,15 @@ msgid "GB"
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:23
-msgid "I have forgotten the address of my Cozy"
+msgid "I have forgotten the address of my Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/select.html.eex:12
-msgid "I have not yet a Cozy"
+msgid "I have not yet a Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:61
-msgid "Increase the storage space of your new Cozy or delete the data not required and empty the trash."
+msgid "Increase the storage space of your new Twake or delete the data not required and empty the trash."
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:11
@@ -77,24 +77,24 @@ msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:2
 #: lib/move_web/templates/layout/app.html.eex:7 lib/move_web/templates/page/index.html.eex:3
-msgid "Move my Cozy"
+msgid "Move my Twake"
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:6
-msgid "Once the transfer is completed, your old Cozy will be deleted."
+msgid "Once the transfer is completed, your old Twake will be deleted."
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:15
-msgid "Once you have created your Cozy, go back to the previous screen and click on \""
+msgid "Once you have created your Twake, go back to the previous screen and click on \""
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:20
 #: lib/move_web/templates/instance/index.html.eex:46 lib/move_web/templates/instance/select.html.eex:2
-msgid "Select a Cozy"
+msgid "Select a Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:52
-msgid "Sorry, you cannot choose the same Cozy twice!"
+msgid "Sorry, you cannot choose the same Twake twice!"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:92
@@ -107,11 +107,11 @@ msgid "Switch"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:58
-msgid "The storage space of your Cozy is insufficient to move all your data. Your new Cozy %{target} has only %{quota} GB."
+msgid "The storage space of your Twake is insufficient to move all your data. Your new Twake %{target} has only %{quota} GB."
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:19
-msgid "This address doesn’t seem to be a cozy. Please check the address you have provided."
+msgid "This address doesn't seem to be a twake. Please check the address you have provided."
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:25
@@ -123,11 +123,11 @@ msgid "Warning"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:66
-msgid "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
+msgid "You cannot access either of your Twake during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete."
 msgstr ""
 
 #: lib/move_web/templates/page/index.html.eex:5
-msgid "You will not be allowed to access either your old or new Cozy during this moving phase. This can take several hours."
+msgid "You will not be allowed to access either your old or new Twake during this moving phase. This can take several hours."
 msgstr ""
 
 #: lib/move_web/templates/layout/app.html.eex:17
@@ -145,11 +145,11 @@ msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:15
 #: lib/move_web/templates/instance/select.html.eex:8
-msgid "I already have a Cozy"
+msgid "I already have a Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/index.html.eex:89
-msgid "When moving, the data already present in your Cozy **_%{target}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?"
+msgid "When moving, the data already present in your Twake **_%{target}_** will be overwritten. Access to your Twake will be blocked until the end of this operation.\n\nDo you really want to continue?"
 msgstr ""
 
 #: lib/move_web/templates/instance/edit.html.eex:29
@@ -185,7 +185,7 @@ msgid "Open the Pass extension on your browser"
 msgstr ""
 
 #: lib/move_web/templates/instance/passwords.html.eex:6
-msgid "Please follow the next steps to export the passwords saved in your Cozy extension of your browser:"
+msgid "Please follow the next steps to export the passwords saved in your Twake extension of your browser:"
 msgstr ""
 
 #: lib/move_web/templates/instance/passwords.html.eex:18
@@ -201,12 +201,12 @@ msgid "and then click on"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:10
-msgid "Click here to create your new Cozy with Cozy Cloud"
+msgid "Click here to create your new Twake with Twake Workplace"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:16
 #: lib/move_web/templates/instance/select.html.eex:8
-msgid "I already have a new Cozy"
+msgid "I already have a new Twake"
 msgstr ""
 
 #: lib/move_web/templates/instance/add.html.eex:12

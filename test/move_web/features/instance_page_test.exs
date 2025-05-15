@@ -5,7 +5,7 @@ defmodule MoveWeb.Features.InstancePageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/en/target/select")
-      |> assert_has(Query.css("h1", text: "Select a Cozy"))
+      |> assert_has(Query.css("h1", text: "Select a Twake"))
       |> take_screenshot(name: "cozy_select_#{suffix}")
     end)
   end
@@ -14,7 +14,7 @@ defmodule MoveWeb.Features.InstancePageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/en/target/add")
-      |> assert_has(Query.css("h1", text: "Create a new Cozy"))
+      |> assert_has(Query.css("h1", text: "Create a new Twake"))
       |> take_screenshot(name: "cozy_add_#{suffix}")
     end)
   end
@@ -23,7 +23,7 @@ defmodule MoveWeb.Features.InstancePageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/en/target/edit")
-      |> assert_has(Query.css("h1", text: "Enter your Cozy address"))
+      |> assert_has(Query.css("h1", text: "Enter your Twake address"))
       |> take_screenshot(name: "cozy_edit_#{suffix}")
     end)
   end

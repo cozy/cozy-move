@@ -1,5 +1,6 @@
-<header>
-  <h1 class="u-title-h1"><%= gettext "Move my Cozy" %></h1>
+<header class="move-header">
+  <img class="u-w-auto" src="<%= Routes.static_path(@conn, "/images/cloud-upload.svg") %>" alt=""/>
+  <h1 class="u-title-h1"><%= gettext "Move my Twake" %></h1>
 </header>
 
 <section>
@@ -17,7 +18,7 @@
     </div>
   <% else %>
     <a href="<%= Routes.instance_path(@conn, :edit, @locale, "source") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
-      <%= gettext "Select a Cozy" %>
+      <%= gettext "Select a Twake" %>
     </a>
   <% end %>
 
@@ -25,7 +26,7 @@
     <h2 class="u-title-h4 u-lh-medium u-mv-0"><%= gettext "To" %></h2>
     <%= if @can_swap do %>
       <%= form_tag(Routes.instance_path(@conn, :swap, @locale), method: "POST") do %>
-        <input type="submit" value="<%= gettext "Switch" %>" class="c-btn c-btn--text u-p-0 u-miw-auto u-mih-auto" />
+        <input type="submit" value="<%= gettext "Switch" %>" class="c-btn c-btn--text u-p-0 u-miw-auto u-mih-auto u-bdrs-100" />
       <% end %>
     <% end %>
   </div>
@@ -43,27 +44,27 @@
     </div>
   <% else %>
     <a href="<%= Routes.instance_path(@conn, :select, @locale, "target") %>" class="u-p-1 u-bxz u-bdw-1 u-bdrs-4 u-bds-dotted u-bdc-frenchPass u-bg-zircon u-dodgerBlue u-uppercase u-ta-center u-link">
-      <%= gettext "Select a Cozy" %>
+      <%= gettext "Select a Twake" %>
     </a>
   <% end %>
 
   <%= if @error == :same do %>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "Sorry, you cannot choose the same Cozy twice!" %>
+      <%= gettext "Sorry, you cannot choose the same Twake twice!" %>
     </p>
   <% end %>
 
   <%= if @error == :quota do %>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "The storage space of your Cozy is insufficient to move all your data. Your new Cozy %{target} has only %{quota} GB.", target: @target.url, quota: size(@target.quota, @locale) %>
+      <%= gettext "The storage space of your Twake is insufficient to move all your data. Your new Twake %{target} has only %{quota} GB.", target: @target.url, quota: size(@target.quota, @locale) %>
     </p>
     <p class="u-error u-fs-italic u-fz-small u-mb-0">
-      <%= gettext "Increase the storage space of your new Cozy or delete the data not required and empty the trash." %>
+      <%= gettext "Increase the storage space of your new Twake or delete the data not required and empty the trash." %>
     </p>
   <% end %>
 
   <p class="u-text u-fz-small u-mb-0 u-mt-1-half">
-    <%= gettext "You cannot access either of your Cozy during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
+    <%= gettext "You cannot access either of your Twake during this export phase. It may take several hours. Don't worry: you will be notified once the export is complete." %>
   </p>
 </section>
 
@@ -83,10 +84,10 @@
       <input type="hidden" name="target_client_secret" value="<%= @target.client_secret %>" >
     <% end %>
     <footer>
-      <input type="submit" class="c-btn"
+      <input type="submit" class="c-btn u-bdrs-100"
         id="react-warning"
         data-title="<%= gettext "Warning" %>"
-        data-content="<%= gettext "When moving, the data already present in your Cozy **_%{target}_** will be overwritten. Access to your Cozy will be blocked until the end of this operation.\n\nDo you really want to continue?", target: @target.url %> "
+        data-content="<%= gettext "When moving, the data already present in your Twake **_%{target}_** will be overwritten. Access to your Twake will be blocked until the end of this operation.\n\nDo you really want to continue?", target: @target.url %> "
         data-confirm="<%= gettext "Overwrite the data" %>"
         data-cancel="<%= gettext "Cancel" %>"
         name="<%= gettext "Start the move!" %>"
@@ -95,7 +96,7 @@
   <% end %>
 <% else %>
   <footer>
-    <button class="c-btn" disabled="true">
+    <button class="c-btn u-bdrs-100" disabled="true">
       <span><%= gettext "Start the move!" %></span>
     </button>
   </footer>

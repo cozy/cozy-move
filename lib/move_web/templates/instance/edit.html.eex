@@ -1,31 +1,31 @@
 <%= form_tag(Routes.instance_path(@conn, :update, @locale, @side), method: "POST") do %>
   <header>
-    <h1 class="u-title-h1"><%= gettext "Enter your Cozy address" %></h1>
+    <h1 class="u-title-h1"><%= gettext "Enter your Twake address" %></h1>
   </header>
 
   <section>
     <h2 class="u-title-h4 u-mb-1">
       <%= if @side == "source" do %>
-        <%= gettext "Fill in the address of the Cozy from which you wish to export your data" %>
+        <%= gettext "Fill in the address of the Twake from which you wish to export your data" %>
       <% else %>
-        <%= gettext "Fill in the address of the Cozy to which you wish to export your data" %>
+        <%= gettext "Fill in the address of the Twake to which you wish to export your data" %>
       <% end %>
     </h2>
     <div id="react-address" data-other="<%= gettext "other" %>">
-      <label for="cozy-url"><%= gettext "Address of my Cozy" %></label>
+      <label for="cozy-url"><%= gettext "Address of my Twake" %></label>
       <input type="text" name="url" id="cozy-url" />
     </div>
     <%= if @error do %><p class="u-error">
-      <%= gettext "This address doesn’t seem to be a cozy. Please check the address you have provided." %>
+      <%= gettext "This address doesn't seem to be a twake. Please check the address you have provided." %>
     </p><% end %>
     <p>
       <a href="https://manager.cozycloud.cc/cozy/reminder?lang=<%= @locale %>" class="u-link">
-        <%= gettext "I have forgotten the address of my Cozy" %>
+        <%= gettext "I have forgotten the address of my Twake" %>
       </a>
     </p>
   </section>
 
   <footer>
-    <input type="submit" class="c-btn u-m-0" value="<%= gettext "Continue" %>" />
+    <input type="submit" class="c-btn u-m-0 u-bdrs-100" value="<%= gettext "Continue" %>" />
   </footer>
 <% end %>

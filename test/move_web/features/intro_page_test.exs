@@ -5,7 +5,7 @@ defmodule MoveWeb.Features.IntroPageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/en")
-      |> assert_has(Query.css("h1", text: "Move my Cozy"))
+      |> assert_has(Query.css("h1", text: "Move my Twake"))
       |> take_screenshot(name: "intro_en_#{suffix}")
     end)
   end
@@ -14,7 +14,7 @@ defmodule MoveWeb.Features.IntroPageTest do
     for_session(fn session, suffix ->
       session
       |> visit("/fr")
-      |> assert_has(Query.css("h1", text: "Déménager mon Cozy"))
+      |> assert_has(Query.css("h1", text: "Déménager mon Twake"))
       |> take_screenshot(name: "intro_fr_#{suffix}")
     end)
   end
