@@ -48,7 +48,7 @@ defmodule Move.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:castore, "~> 0.1"},
+      {:castore, "~> 1.0"},
       {:mint, "~> 1.0"},
       {:tesla, "~> 1.4", override: true},
       {:number, "~> 1.0"},
